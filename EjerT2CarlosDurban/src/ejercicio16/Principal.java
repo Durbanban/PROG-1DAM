@@ -15,6 +15,7 @@ public class Principal {
 		
 		System.out.println("Bienvenido a la calculadora en eclipse");
 		int opcion = 0, numSuma = 0, resSuma = 0, numResta = 0, resResta = 0, numMulti = 0, resMulti = 1;
+		double numDiv = 1.0, resDiv = 1.0;
 		do {
 			System.out.println("Para sumar pulse 1");
 			System.out.println("Para restar pulse 2");
@@ -50,7 +51,7 @@ public class Principal {
 					
 				case 3:
 					System.out.println("Introduzca un número");
-					System.out.println("para volver al menú de operaciones pulse 0");
+					System.out.println("Para volver al menú de operaciones pulse 0");
 					numMulti = Leer.datoInt();
 					while (numMulti != 0) {
 						resMulti = numMulti * resMulti;
@@ -62,7 +63,15 @@ public class Principal {
 					break;
 					
 				case 4:
-					System.out.println();
+					System.out.println("Introduzca un número");
+					System.out.println("Para volver al menú de operaciones pulse 0");
+					numDiv = Leer.datoDouble();
+					while (numDiv !=0) {
+						resDiv = numDiv / resDiv;
+						System.out.printf("El resultado es: %.2f\n", resDiv);
+						System.out.println("Introduzca otro número a dividir o pulse 0 para volver al menú de operaciones");
+						numDiv = Leer.datoDouble();
+					}
 					
 				case 0:
 					
