@@ -12,21 +12,31 @@ public class Principal {
 		 */
 		System.out.println("Bienvenido al programarrays!");
 		System.out.println("Vamos a calcular la media y el número de ceros introducidos");
-		int tam = 8, ceros = 0;
+		int tam = 8, ceros = 0, opcion = 0;
 		double media = 0.0, sum = 0.0;
 		double [] lista = new double [tam]; 
-		System.out.println("A continuación va a introducir 8 números");
-		for (int i = 0; i < lista.length; i++) {
-			System.out.println("Escriba el número de la posición " + (i+1) + ": ");
-			lista[i] = Leer.datoDouble();
-			sum = sum + lista[i];
-			if ( lista[i] == 0) {
-				ceros++;
-			}	
-		}
-		media = sum / lista.length;
-		System.out.printf("\nLa media de los números introducidos es %.2f", media);
-		System.out.println("\nEl número de ceros introducido es " + ceros);
+		do {
+			ceros = 0;
+			media = 0;
+			sum = 0;
+			System.out.println("A continuación va a introducir 8 números\nPulse 0 para salir");
+			opcion = Leer.datoInt();
+			if (opcion != ceros) {
+				for (int i = 0; i < lista.length; i++) {
+					System.out.println("Escriba el número de la posición " + (i+1) + ": ");
+					lista[i] = Leer.datoDouble();
+					sum = sum + lista[i];
+					if ( lista[i] == 0) {
+						ceros++;
+					}	
+				}
+			
+		
+				media = sum / lista.length;
+				System.out.printf("\nLa media de los números introducidos es %.2f", media);
+				System.out.println("\nEl número de ceros introducido es " + ceros);
+			}
+		}while (opcion != ceros);
 		System.out.println("Gracias por usar el programa");
 	}
 

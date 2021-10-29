@@ -11,13 +11,12 @@ public class Principal {
 		System.out.println("Bienvenido al programa de sumas y productos totales");
 		
 		int num = 0, resSuma = 0, cont = 0, resMultip = 0, opcion = 0, tope = 10;
-		System.out.println("Pulse 0 para salir");
-		System.out.println("Pulse cualquier tecla para iniciar");
-		opcion = Leer.datoInt();
+
 			do {
 				cont = 0;
 				resMultip = 1;
 				resSuma = 0;
+				System.out.println("Pulse cualquier número para iniciar");
 				System.out.println("Para salir pulse 0");
 				opcion = Leer.datoInt();
 			
@@ -29,11 +28,13 @@ public class Principal {
 					cont++;
 			
 				}
+				System.out.printf("La suma de todos los números es: %d\n", resSuma);
+				System.out.printf("El producto de todos los números es: %d", resMultip);
 			}while(opcion != 0);
+			System.out.println("Gracias por usar el programa");
 			
 		
-			System.out.printf("La suma de todos los números es: %d\n", resSuma);
-			System.out.printf("El producto de todos los números es: %d", resMultip);
+
 			
 			}
 
