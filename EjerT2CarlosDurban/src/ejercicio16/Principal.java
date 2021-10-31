@@ -14,13 +14,14 @@ public class Principal {
 		 */
 		
 		System.out.println("Bienvenido a la calculadora en eclipse");
-		int opcion = 0, numSuma = 0, resSuma = 0, numResta = 0, resResta = 0, numMulti = 0, resMulti = 1;
-		double numDiv = 1.0, resDiv = 1.0;
+		int opcion = 0, numSuma = 0, resSuma = 0, numResta = 0, resResta = 0, numMulti = 0, resMulti = 1, numParImpar = 0;
+		double  resDiv = 1.0, dividendo = 0.0, divisor = 0.0;
 		do {
 			System.out.println("Para sumar pulse 1");
 			System.out.println("Para restar pulse 2");
 			System.out.println("Para multiplicar pulse 3");
 			System.out.println("Para dividir pulse 4");
+			System.out.println("Para saber si un número es par o impar pulse 5");
 			System.out.println("Para salir pulse 0");
 			opcion = Leer.datoInt();
 			
@@ -64,19 +65,37 @@ public class Principal {
 					
 				case 4:
 					System.out.println("Introduzca un número");
+					dividendo = Leer.datoDouble();
+					System.out.println("Introduzca un número para dividirlo");
 					System.out.println("Para volver al menú de operaciones pulse 0");
-					numDiv = Leer.datoDouble();
-					while (numDiv !=0) {
-						resDiv = numDiv / resDiv;
+					divisor = Leer.datoDouble();
+					while (divisor != 0) {
+						resDiv = dividendo / divisor;
 						System.out.printf("El resultado es: %.2f\n", resDiv);
 						System.out.println("Introduzca otro número a dividir o pulse 0 para volver al menú de operaciones");
-						numDiv = Leer.datoDouble();
+						dividendo = resDiv;
+						divisor = Leer.datoDouble();
 					}
-					
-				case 0:
-					
+					break;
+				case 5:
+					System.out.println("Introduzca un número");
+					System.out.println("Para volver al menú de operaciones pulse 0");
+					numParImpar = Leer.datoInt();
+					while (numParImpar !=0) {
+						if (numParImpar % 2 == 0) {
+							System.out.println("El " + numParImpar + " es un número par");	
+						}else {
+							System.out.println("El " + numParImpar + " es un número impar");
+						}
+						System.out.println("Introduzca otro número o pulse 0 para volver al menú de operaciones");
+						numParImpar = Leer.datoInt();
+					}
+					break;
 				default:
-					
+					System.out.println("Por favor introduzca un número entre 0 y 5\n");
+					break;
+				case 0:
+					break;
 					
 					
 					

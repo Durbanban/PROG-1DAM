@@ -19,6 +19,7 @@ public class Principal {
 				System.out.println("Pulse cualquier número para iniciar");
 				System.out.println("Para salir pulse 0");
 				opcion = Leer.datoInt();
+				if (opcion != 0) {
 			
 				while ( cont<tope) {
 					System.out.println("Introduzca un número que quiere sumar o multiplicar: ");
@@ -28,8 +29,10 @@ public class Principal {
 					cont++;
 			
 				}
+				
 				System.out.printf("La suma de todos los números es: %d\n", resSuma);
-				System.out.printf("El producto de todos los números es: %d", resMultip);
+				System.out.printf("El producto de todos los números es: %d\n", resMultip);
+				}
 			}while(opcion != 0);
 			System.out.println("Gracias por usar el programa");
 			
