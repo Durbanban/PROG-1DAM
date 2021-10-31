@@ -12,13 +12,14 @@ public class Principal {
 		 */
 		
 		System.out.println("Bienvenido a Potencias");
-		int a = 0, b = 0, res = 0;
+		int a = 0, b = 0, res = 0, num = 0;
 		System.out.println("Introduzca la base");
 		a = Leer.datoInt();
 		System.out.println("Ahora introduzca el exponente");
 		b = Leer.datoInt();
-		for (int i = 0; i <= b; i++) {
-			res = a * (a*i);
+		for (int i = 0; i < b; i++) {
+		
+			
 			System.out.println(res);
 		}
 		System.out.printf("%d elevado a %d es igual a %d\n", a, b , res);
