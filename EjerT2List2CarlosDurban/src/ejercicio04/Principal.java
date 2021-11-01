@@ -22,21 +22,21 @@ public class Principal {
 			System.out.println("Escriba el máximo valor posible: ");
 			max = Leer.datoInt();
 			arraynum = new int [tam];
-			//Carga el array con aleatorios
+			// Carga el array con aleatorios
 			for (int i = 0; i < arraynum.length; i++) {
 				arraynum [i] = num.nextInt(max - min + 1) + min;
 			}
-			
+			// Muestra el array con aleatorios para ver si está bien la posición
+			// elegida por el usuario.
 			for ( int i = 0; i < arraynum.length; i++) {
-				System.out.println("\t" + arraynum[i]);
+				System.out.println("Posición " + (i+1) + "\t" + arraynum[i]);
 			}
 			
 			System.out.println("¿Qué posición desea ver del array?");
 			pos = Leer.datoInt();
 			System.out.printf("El valor en la posición %d es %d\n", pos, arraynum[pos - uno]);
-			}else {
-				System.out.println("Hasta otra");
-			}
+			}else;
+			
 			
 		
 		}while(min >= 0);

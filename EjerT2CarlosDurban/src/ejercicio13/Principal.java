@@ -14,16 +14,21 @@ public class Principal {
 		 * que le corresponde.
 		 */
 		
-		int eurHora = 16, eurHoraExt = 20, horas = 0, salario = 0, horasExtra = 0, horasTot = 0;
+		double eurHora = 16.0, eurHoraExt = 20.0, horas = 0.0, salario = 0.0, horasExtra = 0.0, horasTope = 40.0, cero = 0.0;
 		System.out.println("Bienvenido a tu calculador de horas trabajadas");
-		System.out.println("Indique el número de horas trabajadas en la semana. Pulse 0 para salir");
-		horas = Leer.datoInt();
-		if (horas <= 40) {
-			salario = horas * eurHora;
-			System.out.printf("Ha ganado %d € esta semana");
-		}else if (horas > 40) {
-			horasExtra = 0;
-		}
+		do {
+			System.out.println("Indique el número de horas trabajadas en la semana. Pulse 0 para salir");
+			horas = Leer.datoDouble();
+			if (horas <= horasTope && horas > cero) {
+				salario = horas * eurHora;
+				System.out.printf("Ha ganado %.2f € esta semana\n", salario);
+			}else if (horas > horasTope) {
+				horasExtra = horas - horasTope;
+				salario = (horasTope * eurHora) + (horasExtra * eurHoraExt);
+				System.out.printf("Ha ganado %.2f € esta semana\n", salario);
+			}else;
+		}while (horas > cero);
+		System.out.println("Gracias por usar el programa");
 		
 		
 	}

@@ -24,7 +24,7 @@ public class Principal {
 		}
 		
 		}while(a != salir);
-		System.out.println("Adiós");
+		System.out.println("Gracias por usar el programa");
 
 		
 

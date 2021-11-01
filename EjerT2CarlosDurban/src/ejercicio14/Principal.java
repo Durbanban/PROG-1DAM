@@ -29,7 +29,7 @@ public class Principal {
 				System.out.printf("El importe total de ventas ha sido: %.2f €\n", totalVentas);
 				comVentas = (totalVentas * porc) / divisor;
 				salario = fijo + comVentas;
-				System.out.printf("Su salario este mes asciende a %.2f €\n", salario);
+				System.out.printf("Su salario este mes asciende a %.2f €\n\n", salario);
 			}
 		}while (numVentas > 0);
 		System.out.println("Gracias por usar el programa");

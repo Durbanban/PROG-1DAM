@@ -20,11 +20,11 @@ public class Principal {
 		divisor = Leer.datoDouble();
 		if ( divisor > 0) {
 			division = dividendo / divisor;
-			System.out.printf("El resultado de la división es: %.2f", division);
+			System.out.printf("El resultado de la división es: %.2f\n", division);
 		}else {
-			System.out.println("El divisor no puede ser 0");
-			
+			System.out.println("El divisor no puede ser 0");			
 		}
+		System.out.println("Gracias por usar el programa");
 		
 
 	}
