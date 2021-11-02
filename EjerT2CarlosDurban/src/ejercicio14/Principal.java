@@ -21,7 +21,7 @@ public class Principal {
 			System.out.println("Pulse 0 para salir.");
 			numVentas = Leer.datoDouble();
 			if (numVentas > 0) {
-				for (int i = 0; (i+1) <= numVentas; i++) {
+				for (int i = 0; (i+1) <= 25; i++) {
 					System.out.println("Indique el importe de la venta " + (i + 1) + " del mes:");
 					ventas = Leer.datoDouble();
 					totalVentas = totalVentas + ventas;

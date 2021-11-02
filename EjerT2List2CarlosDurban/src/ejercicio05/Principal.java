@@ -45,12 +45,18 @@ public class Principal {
 			System.out.println(arrayEnteros[i]);
 		}
 		for (int i = 0; i < arrayEnteros.length; i++) {
-			arrayEnteros[i] = mayor;
+			if (i == 0) {
+			mayor = arrayEnteros[i];
+			menor = arrayEnteros[i];
+			}
 			if (arrayEnteros[i] > mayor) {
-				arrayEnteros[i] = mayor;
+				mayor = arrayEnteros[i];
+			}else if (arrayEnteros[i] < menor) {
+				menor = arrayEnteros[i];
 			}
 		}
 		System.out.println("El número mayor es " + mayor);
+		System.out.println("El número menor es " + menor);
 		
 		
 		

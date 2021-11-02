@@ -27,6 +27,7 @@ public class Principal {
 			
 			switch(opcion) {
 				case 1:
+					resSuma = 0;
 					System.out.println("Introduzca un número");
 					System.out.println("Para volver al menú de operaciones pulse 0");
 					numSuma = Leer.datoInt();
@@ -39,6 +40,7 @@ public class Principal {
 					break;
 					
 				case 2:
+					resResta = 0;
 					System.out.println("Introduzca un número");
 					System.out.println("Para volver al menú de operaciones pulse 0");
 					numResta = Leer.datoInt();
@@ -51,6 +53,7 @@ public class Principal {
 					break;
 					
 				case 3:
+					resMulti = 1;
 					System.out.println("Introduzca un número");
 					System.out.println("Para volver al menú de operaciones pulse 0");
 					numMulti = Leer.datoInt();
@@ -64,6 +67,7 @@ public class Principal {
 					break;
 					
 				case 4:
+					resDiv = 1;
 					System.out.println("Introduzca un número");
 					dividendo = Leer.datoDouble();
 					System.out.println("Introduzca un número para dividirlo");
