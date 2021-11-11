@@ -6,7 +6,7 @@ public class Principal {
 		// TODO Auto-generated method stub
 		
 		Circulo c = new Circulo (3.4);
-		System.out.println(c.calcularArea() + " metros cuadrados");
+		System.out.println("El área del círculo es: " + c.calcularArea() + " metros cuadrados");
 	}
 
 }
