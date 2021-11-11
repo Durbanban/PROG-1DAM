@@ -58,7 +58,7 @@ public class Alumno {
 	
 	public double sumarPuntos (double puntos) {
 		notaMedia = notaMedia + puntos;
-		return notaMedia;
+		return notaMedia; //NO SE PUEDE DEVOLVER DOS COSAS, ES DECIR SÓLO PUEDE HABER UN RETURN.
 	}
 
 
