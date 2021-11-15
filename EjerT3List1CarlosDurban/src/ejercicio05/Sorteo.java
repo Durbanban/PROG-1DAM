@@ -31,7 +31,7 @@ public class Sorteo {
 		}
 
 	}
-	public String calcularParidad () {
+	public String calcularParidad (int num) {
 		
 		String resultado = "";
 		if (num % 2 == 0) {
@@ -40,5 +40,13 @@ public class Sorteo {
 			resultado = "impar";
 		}
 		return resultado;
+	}
+	public int numPrimitiva () {
+		int max = 99999;
+		int min = 00001;
+		int valor = 0;
+		Random num = new Random (System.nanoTime());
+		valor = num.nextInt(max - min + 1) + min;
+		return valor;
 	}
 }
