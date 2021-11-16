@@ -30,7 +30,7 @@ public class Principal {
 			switch (opcion ) {
 				case 1:
 					do {
-						System.out.println("Bienvenido a la quiniela");
+						System.out.println("\nBienvenido a la quiniela");
 						System.out.println("Pulse 1 para generar una quiniela");
 						System.out.println("Pulse 0 para volver al menú principal");
 						opQuiniela = Leer.datoInt();
@@ -59,7 +59,7 @@ public class Principal {
 						System.out.println("Pulse 0 para volver la menú prinpipal");
 						opParidad = Leer.datoInt();
 						if (opParidad != 0) {
-							System.out.printf("El número %d es %s\n", opParidad, numParidad.calcularParidad(opParidad));
+							System.out.printf("El número %d es %s\n\n", opParidad, numParidad.calcularParidad(opParidad));
 						}
 					}while (opParidad != 0);
 					break;
@@ -75,9 +75,9 @@ public class Principal {
 							numPremiado = numPrimitiva.numPrimitiva();
 							System.out.printf("El número premiado hoy es el %d\n", numPremiado);
 							if (numJugado == numPremiado) {
-								System.out.println("¡¡Enhorabuena le ha tocado la lotería!!");
+								System.out.println("¡¡Enhorabuena le ha tocado la lotería!!\n");
 							}else {
-								System.out.println("Lo sentimos usted no es afortunado. Suerte la próxima vez");
+								System.out.println("Lo sentimos usted no es afortunado. Suerte la próxima vez\n");
 							}
 						}
 					}while (opPrimitiva != 0);
@@ -92,11 +92,11 @@ public class Principal {
 						opAprobado = Leer.datoInt();
 						if (opAprobado != 0) {
 							if (num1.calcularNum() == 6 && num2.calcularNum() == 6 && num3.calcularNum() == 6) {
-								System.out.printf("¡Enhorabuena! Su número es %d%d%d y por lo tanto ha aprobado\n"
+								System.out.printf("¡Enhorabuena! Su número es %d%d%d y por lo tanto ha aprobado\n\n"
 										+ "programación", num1.calcularNum(), num2.calcularNum(), num3.calcularNum());
 							}else {
 								System.out.printf("Lo sentimos. Su número es %d%d%d y por lo tanto nos vemos el "
-										+ "año que viene\n", num1.calcularNum(), num2.calcularNum(), num3.calcularNum());
+										+ "año que viene\n\n", num1.calcularNum(), num2.calcularNum(), num3.calcularNum());
 							}
 						}
 					}while (opAprobado != 0);
