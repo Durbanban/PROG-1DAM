@@ -32,7 +32,7 @@ public class Principal {
 		System.out.println("Mi nota media es " + a2.getNotaMedia ());
 		System.out.println("Mi edad es " + aEditado.getEdad ());
 		System.out.println("Mi nombre es " + aEditado.getNombre ());
-		System.out.println("Mis apellidos son " + aEditado.getApellidos() );
+		System.out.println("Mis apellidos son " + aEditado.getApellidos());
 		System.out.println("Mi nota media es " + aEditado.getNotaMedia ());
 		System.out.println(a1);
 		System.out.println(a2);
