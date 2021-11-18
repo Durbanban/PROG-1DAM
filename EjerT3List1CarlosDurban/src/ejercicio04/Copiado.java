@@ -42,10 +42,9 @@ public class Copiado {
 	public String repetirFrase (int num, String frase) {
 		String resultado = "";
 		for (int i = 0; i < num; i++) {
-			System.out.println(frase);
-			resultado = 
+			resultado = resultado + "\n" + frase;
 		}
-		
+		return resultado;
 		
 	}
 	
