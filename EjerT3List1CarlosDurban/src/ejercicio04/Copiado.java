@@ -27,7 +27,7 @@ public class Copiado {
 	}
 	
 	public void setNum (int num) {
-		
+		this.num = num;
 	}
 	
 	public String getFrase () {
@@ -35,7 +35,7 @@ public class Copiado {
 	}
 	
 	public void setFrase (String frase) {
-		
+		this.frase = frase;
 	}
 	// Métodos
 	
