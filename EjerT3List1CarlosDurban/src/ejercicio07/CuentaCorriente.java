@@ -44,19 +44,13 @@ public class CuentaCorriente {
 		return resultado;
 	}
 	
-	public boolean permitirRetirada (double retirada) {
-		boolean resultado = true;
-		if (retirada > this.saldo) {
-			resultado = true;
-		} else {
-			resultado = false;
+	public double retirar (double retirada, double saldo) {
+		double resultado = this.saldo;
+		if (retirada < this.saldo) {
+			resultado = resultado - retirada;
+		}else {
+			System.out.println("Lo sentimos no es posible realizar la operación");
 		}
-		return resultado;
-	}
-	
-	public double retirar (double retirada) {
-		double resultado = saldo;
-		resultado = resultado - retirada;
 		return resultado;
 	}
 	
@@ -64,8 +58,7 @@ public class CuentaCorriente {
 		double conversor = 1.13;
 		double resultado = saldo;
 		resultado = resultado * conversor;
-		return resultado;
-		
+		return resultado;		
 	}
 
 }

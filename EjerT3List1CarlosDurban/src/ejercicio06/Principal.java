@@ -17,14 +17,25 @@ public class Principal {
 			System.out.println("Pulse 0 para salir");
 			
 			opcion = Leer.datoInt();
-			if (opcion != 0) {
-				comprobacion = moneda.lanzarMoneda();
-				System.out.println("La elección ha sido " + opcion);
-				System.out.println("El resultado es " + comprobacion + "\n");
-				
-				
-				moneda.mostrarGanador(moneda.comprobarGanador(opcion, comprobacion));
-			}
+			switch (opcion) {
+				case 1:
+					comprobacion = moneda.lanzarMoneda();
+					System.out.println("La elección ha sido " + opcion);
+					System.out.println("El resultado es " + comprobacion + "\n");
+					moneda.mostrarGanador(moneda.comprobarGanador(opcion, comprobacion));
+					break;
+				case 2:
+					comprobacion = moneda.lanzarMoneda();
+					System.out.println("La elección ha sido " + opcion);
+					System.out.println("El resultado es " + comprobacion + "\n");
+					moneda.mostrarGanador(moneda.comprobarGanador(opcion, comprobacion));
+					break;
+				case 0:
+					break;
+				default:
+					System.out.println("Por favor, elija una opción válida");
+					break;
+			} 
 		} while (opcion != 0);
 		System.out.println("Gracias por usar el programa");
 		

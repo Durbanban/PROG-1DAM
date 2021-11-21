@@ -33,9 +33,11 @@ public class CaraCruz {
 	
 	public void mostrarGanador (boolean comprobacion) {
 		if (comprobacion == true) {
-			System.out.println("No te flipes que tenías un 50 % de probabilidad de ganar");
+			System.out.println("E\tN\tH\tO\tR\tA\tB\tU\tE\tN\tA");
+			System.out.println("No se emocione que tenía un 50 % de probabilidad de ganar");
 		}else {
-			System.out.println("¡Vaya paquete! Tenías un 50 % de probabilidad de ganar");
+			System.out.println("L\tO\t\tS\tE\tN\tT\tI\tM\tO\tS");
+			System.out.println("Es usted malísimo. Tenía un 50 % de probabilidad de ganar");
 		}
 	}
 
