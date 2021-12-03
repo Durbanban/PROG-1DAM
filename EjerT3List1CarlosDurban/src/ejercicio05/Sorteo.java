@@ -6,6 +6,29 @@ public class Sorteo {
 		
 	}
 	
+	public int calcularAleatorio (int max, int min) {
+		int valor = 0;
+		Random num = new Random (System.nanoTime());
+		valor = num.nextInt(max - min + 1) + min;
+		return valor;
+	}
+	
+	public char calcularGanador (int prob) {
+		char valor;
+		if (prob == 1) {
+			valor = '1';
+			return valor;
+		}else if (prob == 3) {
+			valor = 'X';
+			return valor;
+		}else {
+			valor = '2';
+			return valor;
+		}
+
+	}
+	
+	
 	public int calcularNum () {
 		int valor = 0;
 		int max = 9;
@@ -48,5 +71,23 @@ public class Sorteo {
 		Random num = new Random (System.nanoTime());
 		valor = num.nextInt(max - min + 1) + min;
 		return valor;
+	}
+	
+	public boolean comprobarGanadorPrim (int numJ, int numG) {
+		boolean resultado = true;
+		if (numJ == numG) {
+			resultado = true;
+		} else {
+			resultado = false;
+		}
+		return resultado;
+	}
+	
+	public void mostrarGanador (boolean decimo) {
+		if (decimo) {
+			System.out.println("Enhorabuena has ganado!!");
+		}else {
+			System.out.println("Suerte la próxima vez");
+		}
 	}
 }
