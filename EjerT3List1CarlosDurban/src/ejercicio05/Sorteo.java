@@ -28,6 +28,23 @@ public class Sorteo {
 
 	}
 	
+	public void mostrarGanadorQuin (char a) {
+		int i = 1;
+		if (a == '1') {
+			System.out.printf("resultado %d:\t%c\n", i, a);
+			i++;
+		}else if (a == 'X') {
+			System.out.printf("resultado %d:\t\t%c\n", i, a);
+			i++;
+		}else {
+			System.out.printf("resultado %d:\t\t\t%c\n", i, a);
+			i++;
+		}
+		i++;
+		
+	}
+	
+	
 	
 	public int calcularNum () {
 		int valor = 0;
