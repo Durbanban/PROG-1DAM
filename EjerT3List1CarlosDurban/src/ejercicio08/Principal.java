@@ -19,7 +19,7 @@ public class Principal {
 				System.out.println("Por favor introduzca el número elegido");
 				numLoteria = Leer.datoInt();
 				s1 = new Sorteo (numLoteria);
-				s1.comprobarGanador(numLoteria, s1.numPrimitiva());
+				s1.mostrarGanador(s1.comprobarGanador(numLoteria, s1.numPrimitiva()));
 			}else if (opcion > 1) {
 				System.out.println("Por favor, elija una opción válida");
 			}
