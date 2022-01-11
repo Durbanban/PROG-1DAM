@@ -26,11 +26,11 @@ public class Maquina {
 	}
 	
 	public boolean pedirPassword (String pass) {		
-		boolean confirmacion = true;
+		boolean confirmacion;
 		if (pass.equals(getPassword())) {
-			confirmacion = true;
-		}else {
 			confirmacion = false;
+		}else {
+			confirmacion = true;
 		}
 		return confirmacion;
 	}
