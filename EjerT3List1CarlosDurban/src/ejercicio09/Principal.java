@@ -12,11 +12,8 @@ public class Principal {
 		Maquina maquina = new Maquina (defPassword);
 		double cantInsertada = 0.0;
 		int opcion = 0, numBillete = 0;
-		
-		System.out.println("Bienvenido al metro de Triana");
-		System.out.println("Pulse 1 para comprar billetes");
-		System.out.println("Pulse 2 para opciones de operario");
-		System.out.println("Pulse 0 para salir");
+
+		maquina.bienvenida();
 		opcion = Leer.datoInt();
 		switch (opcion) {
 			case 1:
@@ -26,7 +23,7 @@ public class Principal {
 			case 2:
 				System.out.println("Introduzca la contraseña de operario");
 				pass = Leer.dato();
-				while (maquina.pedirPassword(pass) != true) {
+				while (maquina.pedirPassword(pass)) {
 					System.out.println("Contraseña incorrecta, vuelva a intentarlo");
 					pass = Leer.dato();
 				}

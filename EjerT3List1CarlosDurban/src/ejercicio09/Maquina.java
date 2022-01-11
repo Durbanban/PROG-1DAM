@@ -7,7 +7,17 @@ public class Maquina {
 	public Maquina (String password) {
 		this.password = password;
 	}
-	
+		
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+
 	public double comprarBilletes (int numBilletes, double cantInsertada, double precioTicket) {	
 		double coste = 0.0, devolucion = 0.0;
 		coste = numBilletes * precioTicket;
@@ -15,15 +25,21 @@ public class Maquina {
 		return devolucion;
 	}
 	
-	public boolean pedirPassword (String password) {		
+	public boolean pedirPassword (String pass) {		
 		boolean confirmacion = true;
-		if (password == this.password) {
+		if (pass.equals(getPassword())) {
 			confirmacion = true;
 		}else {
 			confirmacion = false;
 		}
 		return confirmacion;
-		
+	}
+	
+	public void bienvenida () {
+		System.out.println("Bienvenido al metro de Triana");
+		System.out.println("Pulse 1 para comprar billetes");
+		System.out.println("Pulse 2 para opciones de operario");
+		System.out.println("Pulse 0 para salir");
 	}
 	
 	
