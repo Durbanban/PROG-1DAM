@@ -28,8 +28,18 @@ public class Sorteo {
 		
 	}
 	
-	public void comprobarGanador (int decimo, int premiado) {
+	public boolean comprobarGanador (int decimo, int premiado) {
+		boolean b = false;
 		if (this.decimo == premiado) {
+			b = true;
+			return b;
+		}else {
+			return b;
+		}
+	}
+	
+	public void mostrarGanador (boolean ganador) {
+		if (ganador) {
 			System.out.println("¡¡ENHORABUENA!!\t¡Es usted ganador de la lotería!\n¡A por el champán y a salir en la tele!");
 		}else {
 			System.out.println("No ha sido premiado\nVa a tener que seguir trabajando");
