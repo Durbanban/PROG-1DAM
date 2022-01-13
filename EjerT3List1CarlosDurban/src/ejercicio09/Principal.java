@@ -33,7 +33,7 @@ public class Principal {
 						cantInsertada = Leer.datoDouble();
 						check = maquina.comprobarCompra(numBillete, cantInsertada, ticket);
 					}
-					System.out.println("Su cambio es: " + maquina.devolverImporte(numBillete, cantInsertada, ticket) + " €.");
+					maquina.devolverImporte(numBillete, cantInsertada, ticket);
 					
 					break;
 				case 2:

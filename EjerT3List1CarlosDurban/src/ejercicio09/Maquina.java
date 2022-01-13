@@ -42,6 +42,7 @@ public class Maquina {
 		coste = numBilletes * t.getPrecio();
 		res = cantInsertada - coste;
 		this.recaudacion = recaudacion + coste;
+		mostrarTicket(t, numBilletes , res);
 		return res;
 	}
 	
@@ -63,6 +64,17 @@ public class Maquina {
 		System.out.println("Pulse 1 para mostrar recaudación");
 		System.out.println("Pulse 2 para resetear la recaudación");
 		System.out.println("Pulse 0 para volver al menú principal");
+	}
+	
+	public void mostrarTicket (Ticket t, int cantidad, double devolucion) {
+		double costeTotal = 0.0;
+		costeTotal = t.getPrecio() * cantidad;
+		System.out.println("\t\t\tMETRO DE TRIANA");
+		System.out.println("\n\t*********************************************");
+		System.out.println("\n\tPrecio unitario\tCantidad\tPrecio total");
+		System.out.printf("\t%.2f\t\t%d\t\t%.2f", t.getPrecio(), cantidad, costeTotal);
+		System.out.printf("\n\tSu cambio es: %.2f €", devolucion);
+		System.out.println("\n\n\t*********************************************");
 	}
 	
 	
