@@ -72,9 +72,10 @@ public class Maquina {
 		System.out.println("\t\t\tMETRO DE TRIANA");
 		System.out.println("\n\t*********************************************");
 		System.out.println("\n\tPrecio unitario\tCantidad\tPrecio total");
-		System.out.printf("\t%.2f\t\t%d\t\t%.2f", t.getPrecio(), cantidad, costeTotal);
-		System.out.printf("\n\tSu cambio es: %.2f €", devolucion);
-		System.out.println("\n\n\t*********************************************");
+		System.out.printf("\t%.2f €\t\t%d\t\t%.2f €", t.getPrecio(), cantidad, costeTotal);
+		System.out.println("\n\n\t\t\tVálido para " + cantidad + " personas");
+		System.out.printf("\n\t\t\tSu cambio es: %.2f €\n", devolucion);
+		System.out.println("\n\t*********************************************");
 	}
 	
 	
