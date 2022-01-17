@@ -1,6 +1,8 @@
 package ejercicio10;
 
+
 public class Gestion {
+	
 	
 	public void menuPrincipal () {
 		System.out.println("Pulse 1 para registrar a un alumno");
@@ -12,6 +14,7 @@ public class Gestion {
 		Alumno a1 = new Alumno (nombre, null);
 		return a1;
 	}
+	
 	
 	
 
