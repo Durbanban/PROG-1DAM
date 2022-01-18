@@ -27,7 +27,13 @@ public class Principal {
 					System.out.println("Indique la nota " + (i+1));
 					nota = Leer.datoDouble();
 					n = new Nota (nota);
+					notas [i] = n;
 				}
+				a1 = new Alumno (nombreAlumno, notas);
+				break;
+			case 2:
+				
+				
 				
 				
 				
