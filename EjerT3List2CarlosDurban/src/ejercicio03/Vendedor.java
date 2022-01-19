@@ -32,6 +32,14 @@ public class Vendedor {
 	}
 	
 	
+	public void menuPrincipal () {
+		System.out.println("Pulse 1 para mostrar todos los móviles de la lista");
+		System.out.println("Pulse 2 para mostrar los móviles que se han vendido");
+		System.out.println("Pulse 3 para mostrar el precio de un móvil");
+		System.out.println("Pulse 0 para salir");
+	}
+	
+	
 	
 	
 	
