@@ -57,6 +57,13 @@ public class Movil {
 	public void setPrecioU(double precioU) {
 		this.precioU = precioU;
 	}
+
+	@Override
+	public String toString() {
+		return "Movil [marca=" + marca + ", modelo=" + modelo + ", vendido=" + vendido + ", precioU=" + precioU + "]";
+	}
+	
+	
 	
 	
 	
