@@ -55,15 +55,12 @@ public class Vendedor {
 		System.out.println("Ha vendido: " + contador + " móviles");
 	}
 	
-	public double calcularDescuento (int porc) { 
-		int cien = 100;
-		return porc / cien;
-	}
 	
-	public void mostrarPrecioFinal (int posicion, int porc) {
-		double precioFinal = 0.0;
-		precioFinal = listaMoviles [posicion - 1].getPrecioU() - (listaMoviles [posicion - 1].getPrecioU() * calcularDescuento (porc));
-		System.out.println("El precio del móvil es: " + precioFinal + " €");		
+	public double calcularPrecioFinal (int posicion, int porcentaje) {
+		double cien = 100.0;
+		double descuento = 0.0;
+		descuento = (porcentaje / cien);
+		return listaMoviles [posicion - 1].getPrecioU() - (listaMoviles [posicion - 1].getPrecioU() * descuento);	
 	}
 	
 	public boolean comprobarVendido (int posicion) {
@@ -74,8 +71,18 @@ public class Vendedor {
 		}
 	}
 	
-	public void venderMovil (int posicion, int porc, boolean vendido) {
-		
+	public void venderMovil (int posicion, int porc, int cantidad, boolean vendido) {
+		double cambio = 0.0;
+		if (vendido) {
+			System.out.println("No puede vender este móvil porque está ya vendido");
+		}else {
+			listaMoviles [posicion -1].setVendido(true);
+			cambio = cantidad - calcularPrecioFinal (posicion, porc);
+			System.out.printf("El cambio a devolver es: %.2f €", cambio);
+			
+			
+			
+		}
 	}
 	
 	

@@ -7,7 +7,7 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int cantidadMoviles = 0, contador = 0, opcion = 0, opcionMovilPrecio = 0, descuentoMovil = 0, opcionCaso3 = 0;
+		int cantidadMoviles = 0, contador = 0, opcion = 0, opcionMovilPrecio = 0, descuentoMovil = 0, opcionCaso3 = 0, pago = 0;
 		String marca;
 		String modelo;
 		double precio = 0.0, recaudacion = 0.0;
@@ -47,12 +47,14 @@ public class Principal {
 					opcionMovilPrecio = Leer.datoInt();
 					System.out.println("Introduzca el descuento deseado");
 					descuentoMovil = Leer.datoInt();
-					v.mostrarPrecioFinal(opcionMovilPrecio, descuentoMovil);
+					System.out.println("El precio es: " + v.calcularPrecioFinal(opcionMovilPrecio, descuentoMovil) + " €");
 					System.out.println("Pulse 1 para vender el móvil");
 					System.out.println("Pulse 0 para volver al menú principal");
 					opcionCaso3 = Leer.datoInt();
 					if (opcionCaso3 == 1) {
-						
+						System.out.println("¿Qué cantidad va a recibir?");
+						pago = Leer.datoInt();
+						v.venderMovil(opcionMovilPrecio, descuentoMovil, pago, v.comprobarVendido(opcionMovilPrecio));
 					}
 					break;
 				case 0:
