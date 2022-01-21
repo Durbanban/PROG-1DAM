@@ -79,7 +79,7 @@ public class Cliente {
 				+ altura + ", edad=" + edad + "]";
 	}
 
-	public double calcularIMC (double peso, double altura) {
+	public double calcularIMC () {
 		double dos = 2.0;
 		return peso / Math.pow(altura, dos);
 	}
