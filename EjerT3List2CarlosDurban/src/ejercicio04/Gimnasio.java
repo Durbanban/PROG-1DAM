@@ -1,5 +1,7 @@
 package ejercicio04;
 
+import java.util.Iterator;
+
 public class Gimnasio {
 	
 	private Cliente [] listaClientes;
