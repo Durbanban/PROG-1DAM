@@ -1,21 +1,29 @@
 package tablaTomas;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.time.LocalDate;
 import java.util.Random;
 
 public class Principal {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		
+		System.setOut(new PrintStream(new FileOutputStream("residencia.txt")));
+
+		boolean primerPrint = true;
+		boolean usoId = true;
 		int dias = 714, maxIdMeds = 300, minIdMeds = 1, maxCantMeds = 5, minCantMeds = 0, numMeds = 0, idMed = 0;
-		String dni, momento;
+		String dni, momento, aux, aux2;
 		
 		int duracionNumMeds = 0;
 		
 		LocalDate fechaInicio = LocalDate.of(2020, 1, 17);
 		LocalDate fecha;
 		Gestion g = new Gestion ();
+		
 		
 		String [] listaDni = {"30264227J", "24495377Y", "47972091R", "19775410Y", 
 				"86930737E", "11219791H", "70410442W", "90751538X", "54865763C", "79492924W", 
@@ -27,47 +35,81 @@ public class Principal {
 				"03890386Z", "98636192C", "62057010D", "86628976I", "08002201X"};
 		
 		Dni dnis = new Dni (listaDni);
-		
+		aux2 = "tuvieja";
 		String [] listaMomentos = {"Desayuno", "Almuerzo", "Merienda", "Cena"};
 		
 		Momento momentos = new Momento (listaMomentos);
 		
 		fecha = fechaInicio;
 		
- 
-/*		
+		
+		
 		for (int i = 0; i < dnis.getDnis().length; i++) {
 			dni = dnis.getDnis() [i];
 			for (int j = 0; j < listaMomentos.length; j++) {
 				momento = listaMomentos [j];
-				for (int j2 = 0; j2 < listaMomentos.length; j2++) {
-					numMeds = g.generarAleatorio(maxCantMeds, minCantMeds);
+				numMeds = g.generarAleatorio(maxCantMeds, minCantMeds);
+				System.out.println("INSERT INTO hoja_tratamiento (dni_residente, cantmedicamento, momento) "
+						+ "VALUES ('" +listaDni[i]+ "', " +numMeds+ ", '" +listaMomentos[j]+ "');");
+				for (int j2 = 0; j2 < dias; j2++) {
+					int [] numeroMed = new int [numMeds];
 					for (int k = 0; k < numMeds; k++) {
-						g.generarAleatorio(maxIdMeds, minIdMeds);
+						idMed = g.generarAleatorio(maxIdMeds, minIdMeds);
+						aux = listaDni [i] + listaMomentos [j] + fecha.toString() + String.valueOf(idMed);
+						if (primerPrint) {
+							System.out.println("INSERT INTO tomas (dni_residente, momento, fecha, id_medicamento) "
+									+ "VALUES ('" +listaDni[i]+ "', '" +listaMomentos[j]+ "', '" + fecha.toString() + "', " + idMed + ");");
+							numeroMed [k] = idMed;
+							aux2 = listaDni [i] + listaMomentos [j] + fecha.toString() + String.valueOf(idMed);
+							primerPrint = false;
+						}else if (!aux.equalsIgnoreCase(aux2)) {
+							System.out.println("INSERT INTO tomas (dni_residente, momento, fecha, id_medicamento) "
+									+ "VALUES ('" +listaDni[i]+ "', '" +listaMomentos[j]+ "', '" + fecha.toString() + "', " + idMed + ");");
+							numeroMed [k] = idMed;
+							aux2 = listaDni [i] + listaMomentos [j] + fecha.toString() + String.valueOf(idMed);
+							
+						}else {
+							idMed = g.noReutilizar(numeroMed, idMed);
+							System.out.println("INSERT INTO tomas (dni_residente, momento, fecha, id_medicamento) "
+									+ "VALUES ('" +listaDni[i]+ "', '" +listaMomentos[j]+ "', '" + fecha.toString() + "', " + idMed + ");");
+							numeroMed [k] = idMed;
+							aux2 = listaDni [i] + listaMomentos [j] + fecha.toString() + String.valueOf(idMed);
+						}
+
+							
+						
 					}
+					fecha = fecha.plusDays(1);
 				}
-			}
-			
+			fecha = fechaInicio;
+			}		
 		}
-*/
-		
+
+
+/*
 		for (int l = 0; l < dias; l++) {
 			
 			for (int i = 0; i < dnis.getDnis().length; i++) {
 				dni = dnis.getDnis() [i];
 				for (int j = 0; j < listaMomentos.length; j++) {
 					numMeds = g.generarAleatorio(maxCantMeds, minCantMeds);
-					System.out.println("INSERT INTO hoja_tratamiento (dni_residente, cantmedicamento, momento) values ('" +listaDni[i]+ "', " +numMeds+ ",'" +listaMomentos[j]+ "');");
+					//if () {
+						System.out.println("INSERT INTO hoja_tratamiento (dni_residente, cantmedicamento, momento) "
+							+ "VALUES ('" +listaDni[i]+ "', " +numMeds+ ", '" +listaMomentos[j]+ "');");
+						// aux = listaDni[i] + listaMomentos [j];
+						// primerPrint = false;
+					//}
 					for (int k = 0; k < numMeds; k++) {
 						idMed = g.generarAleatorio(maxIdMeds, minIdMeds);	
-						System.out.println("INSERT INTO tomas (dni_residente, momento, fecha, id_medicamento) VALUES ('" +listaDni[i]+ "','" +listaMomentos[j]+ "', " + fecha.toString() + ", " + idMed + ");");
+						System.out.println("INSERT INTO tomas (dni_residente, momento, fecha, id_medicamento) "
+								+ "VALUES ('" +listaDni[i]+ "', '" +listaMomentos[j]+ "', '" + fecha.toString() + "', " + idMed + ");");
 					}
 				}
 				
 			}
 			fecha = fecha.plusDays(1);
 		}
-		
+*/		
 		
 		
 
