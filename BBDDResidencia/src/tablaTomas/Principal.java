@@ -42,8 +42,32 @@ public class Principal {
 		
 		fecha = fechaInicio;
 		
+		for (int i = 0; i < dnis.getDnis().length; i++) {
+		    dni = dnis.getDnis()[i];
+		    for (int j = 0; j < listaMomentos.length; j++) {
+		        momento = listaMomentos[j];
+		        numMeds = g.generarAleatorio(maxCantMeds, minCantMeds);
+		        System.out.println("INSERT INTO hoja_tratamiento (dni_residente, cantmedicamento, momento) "
+		                + "VALUES ('" + listaDni[i] + "', " + numMeds + ", '" + listaMomentos[j] + "');");
+		        for (int j2 = 0; j2 < dias; j2++) {
+		            int[] numeroMed = new int[numMeds];
+		            for (int k = 0; k < numMeds; k++) {
+		                idMed = g.generarAleatorio(maxIdMeds, minIdMeds);
+		                idMed = g.noReutilizar(numeroMed, idMed);
+		                System.out.println("INSERT INTO tomas (dni_residente, momento, fecha, id_medicamento) "
+		                        + "VALUES ('" + listaDni[i] + "', '" + listaMomentos[j] + "', '" + fecha.toString()
+		                        + "', " + idMed + ");");
+		                numeroMed[k] = idMed;
+		            }
+		            fecha = fecha.plusDays(1);
+		        }
+		    }
+		    fecha = fechaInicio;
+		} 
+
 		
 		
+/*		
 		for (int i = 0; i < dnis.getDnis().length; i++) {
 			dni = dnis.getDnis() [i];
 			for (int j = 0; j < listaMomentos.length; j++) {
@@ -84,7 +108,7 @@ public class Principal {
 			fecha = fechaInicio;
 			}		
 		}
-
+*/
 
 /*
 		for (int l = 0; l < dias; l++) {
