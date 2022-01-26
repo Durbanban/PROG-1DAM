@@ -38,5 +38,11 @@ public class Trabajador {
 	}
 	
 	
+	// Mal ejemplo sólo para ahorrar cálculos
+	public double calcularPaga () {
+		return (1200 - 1200 * 20 / 100) + 35 * 23;
+	}
+	
+	
 
 }
