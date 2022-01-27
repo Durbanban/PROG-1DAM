@@ -40,6 +40,14 @@ public class Consultor extends Trabajador {
 	public double calcularPaga () { //Tiene que tener la misma firma que el método de la clase padre.
 		return super.calcularPaga() + horas * tarifa;
 	}
+	
+	public void avisarHorasExtras (int tope) {
+		if (horas > tope) {
+			System.out.println("No trabajes tanto");
+		}else {
+			System.out.println("Sigue currando malandrín");
+		}
+	}
 
 
 	
