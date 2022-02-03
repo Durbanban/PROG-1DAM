@@ -93,7 +93,7 @@ public class Vehiculo {
 	
 	@Override
 	public String toString() {
-		return super.toString() + "Vehiculo [marca=" + marca + ", modelo=" + modelo + ", cilindrada=" + cilindrada + ", potencia="
+		return "Vehiculo [marca=" + marca + ", modelo=" + modelo + ", cilindrada=" + cilindrada + ", potencia="
 				+ potencia + ", tipoCombustible=" + tipoCombustible + ", precio=" + precio + ", vendido=" + vendido
 				+ "]";
 	}
