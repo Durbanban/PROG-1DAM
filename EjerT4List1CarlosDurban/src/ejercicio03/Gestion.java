@@ -35,7 +35,7 @@ public class Gestion {
 			if (listaVehiculos [i] == null) {
 				System.out.println("En fabricación");
 			}else {
-				System.out.println(listaVehiculos [i]);
+				System.out.println((i + 1) + ". " + listaVehiculos [i]);
 			}
 		}
 	}
@@ -50,9 +50,10 @@ public class Gestion {
 				System.out.println("Este vehículo ya se ha vendido");
 			}else {
 				listaVehiculos [posicion - 1].setVendido(true);
+				recaudacion += listaVehiculos [posicion - 1].calcularImpuesto(impuesto);
+				mostrarVehiculoVendido(posicion, impuesto);
 			}
-			recaudacion += listaVehiculos [posicion - 1].calcularImpuesto(impuesto);
-			mostrarVehiculoVendido(posicion, impuesto);
+			
 		}else {
 			System.out.println("Este vehículo no está fabricado aún");
 		}
@@ -61,7 +62,7 @@ public class Gestion {
 	public void mostrarTipo () {
 		for (int i = 0; i < listaVehiculos.length; i++) {
 			if (listaVehiculos[i] instanceof Motocicleta) {
-				System.out.println("El vehñiculo es una moto");
+				System.out.println("El vehículo es una moto");
 			}else if (listaVehiculos [i] instanceof Coche) {
 				System.out.println("El vehículo es un coche");
 			}else if (listaVehiculos [i] instanceof Furgoneta ){

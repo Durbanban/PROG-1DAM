@@ -7,7 +7,7 @@ public class Principal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		String marca, modelo, numBastidor, tipoCombustible;
+		String marca, modelo, numBastidor, tipoCombustible, buscarBastidor;
 		double impuesto = 0.0, precio = 0.0, cargaMax = 0, impuestoFurgo = 0;
 		int cilindrada = 0, potencia = 0, numPuertas = 0, stock = 0, opcionMenu = 0, posicionVehiculo = 0, opcionVehiculo = 0;
 		boolean carenado, vendido = false;
@@ -145,7 +145,7 @@ public static void mostrarMenu () {
 	System.out.println("Pulse 3 para añadir una furgoneta al stock");
 	System.out.println("Pulse 4 para vender un vehículo");
 	System.out.println("Pulse 5 para mostrar la recaudación total del día");
-	System.out.println("Pulse 6 para mostrar los tipos de vehículos que hay en stock");
+	System.out.println("Pulse 6 para mostrar el tipo de vehículo");
 	System.out.println("Pulse 0 para salir");
 }
 
