@@ -139,14 +139,14 @@ public class Principal {
 
 	}
 	
-public static void mostrarMenu () {
-	System.out.println("Pulse 1 para añadir un coche al stock");
-	System.out.println("Pulse 2 para añadir una motocicleta al stock");
-	System.out.println("Pulse 3 para añadir una furgoneta al stock");
-	System.out.println("Pulse 4 para vender un vehículo");
-	System.out.println("Pulse 5 para mostrar la recaudación total del día");
-	System.out.println("Pulse 6 para mostrar el tipo de vehículo");
-	System.out.println("Pulse 0 para salir");
-}
+	public static void mostrarMenu () {
+		System.out.println("Pulse 1 para añadir un coche al stock");
+		System.out.println("Pulse 2 para añadir una motocicleta al stock");
+		System.out.println("Pulse 3 para añadir una furgoneta al stock");
+		System.out.println("Pulse 4 para vender un vehículo");
+		System.out.println("Pulse 5 para mostrar la recaudación total del día");
+		System.out.println("Pulse 6 para mostrar el tipo de vehículo");
+		System.out.println("Pulse 0 para salir");
+	}
 
 }
