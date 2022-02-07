@@ -41,7 +41,7 @@ public class Plataforma {
 		System.out.println("Pulse 0 para salir");
 	}
 	
-	public void addDeposito (Deposito depo, int posicion) {
+	public void addDeposito (Deposito depo, int posicion) { // Me sobra el bucle for.
 		for (int i = 0; i < listaDepo.length; i++) {
 			if (i == posicion) {
 				listaDepo [i] = depo;

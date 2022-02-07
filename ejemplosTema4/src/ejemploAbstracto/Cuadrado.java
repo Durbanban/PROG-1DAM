@@ -27,6 +27,10 @@ public class Cuadrado extends Figura{
 		return lado * lado;
 	}
 	
+	public void mostrarLados () {
+		System.out.println("Sólo estoy en la clase cuadrado. Tengo 4 lados.");
+	}
+	
 	
 	
 
