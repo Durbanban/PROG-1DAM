@@ -5,7 +5,7 @@ public class Electronica extends Producto {
 	private boolean inalambrico;
 	
 	
-	public Electronica (Double precioUnitario, String nombre, String id, boolean inalambrico) {
+	public Electronica (double precioUnitario, String nombre, String id, boolean inalambrico) {
 		super (precioUnitario, nombre, id);
 		this.inalambrico = inalambrico;
 	}
@@ -24,6 +24,11 @@ public class Electronica extends Producto {
 	@Override
 	public String toString() {
 		return super.toString() + "Electronica [inalambrico=" + inalambrico + "]";
+	}
+	
+	
+	public double calcularPrecioFinal (double impuesto, double descuento) {
+		return super.calcularPrecioFinal(impuesto, descuento) + impuesto;
 	}
 	
 	

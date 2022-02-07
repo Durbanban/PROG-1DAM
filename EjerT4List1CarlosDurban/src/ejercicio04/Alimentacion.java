@@ -2,29 +2,50 @@ package ejercicio04;
 
 public class Alimentacion extends Producto {
 	
-	private boolean caducado;
+	private int diasParaCaducar;
 	
 	
-	public Alimentacion (Double precioUnitario, String nombre, String id, boolean caducado) {
+	public Alimentacion (double precioUnitario, String nombre, String id, int diasParaCaducar) {
 		super (precioUnitario, nombre, id);
-		this.caducado = caducado;
+		this.diasParaCaducar = diasParaCaducar;
 	}
 
 
-	public boolean isCaducado() {
-		return caducado;
+	public int getDiasParaCaducar() {
+		return diasParaCaducar;
 	}
 
 
-	public void setCaducado(boolean caducado) {
-		this.caducado = caducado;
+	public void setDiasParaCaducar(int diasParaCaducar) {
+		this.diasParaCaducar = diasParaCaducar;
 	}
 
 
 	@Override
 	public String toString() {
-		return super.toString() + "Alimentacion [caducado=" + caducado + "]";
+		return super.toString() + "Alimentacion [diasParaCaducar=" + diasParaCaducar + "]";
 	}
+
+
+	public void avisarCaducidad () {
+		int dos = 2;
+		if (diasParaCaducar <= dos) {
+			System.out.println("Este producto caduca en dos o menos días.");
+		}
+	}
+	
+	public double calcularPrecioFinal (double impuesto, double descuento) {
+		int dos = 2;
+		double divisor = 100.0;
+		if (diasParaCaducar <= dos) {
+			return super.calcularPrecioFinal(impuesto, descuento) - (super.calcularPrecioFinal(impuesto, descuento) * (descuento / divisor));
+		}else {
+			return super.calcularPrecioFinal(impuesto, descuento);
+		}
+	}
+
+
+
 	
 	
 

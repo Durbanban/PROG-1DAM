@@ -49,6 +49,8 @@ public class Producto {
 		return "Producto [precioUnitario=" + precioUnitario + ", nombre=" + nombre + ", id=" + id + "]";
 	}
 	
-	
+	public double calcularPrecioFinal (double impuesto, double descuento) {
+		return precioUnitario;
+	}
 
 }
