@@ -42,5 +42,23 @@ public class CalculadoraBasica {
 	public void mostrarResultado (double resultado) {
 		System.out.println(resultado);
 	}
+	
+	/**
+	 * 
+	 * Método que calcula el máximo común divisor de dos números
+	 * 
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	
+	public int mcd (int a, int b) {
+		/*
+		   Implementamos el cálculo mediante el método de 
+		   Ruffini porque otras aproximaciones son menos eficientes
+		 */
+		
+		return 0;
+	}
 
 }
