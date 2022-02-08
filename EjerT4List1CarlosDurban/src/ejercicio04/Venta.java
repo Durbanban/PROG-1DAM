@@ -11,7 +11,7 @@ public class Venta {
 		this.lineasTicket = lineasTicket;
 	}
 
-
+	
 	public LineaVenta[] getLineasTicket() {
 		return lineasTicket;
 	}

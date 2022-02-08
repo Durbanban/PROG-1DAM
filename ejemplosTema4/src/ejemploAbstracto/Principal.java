@@ -15,6 +15,7 @@ public class Principal {
 		
 		Figura rectangulo2 = new Rectangulo (4, 8, 6 ,12);
 		
+		
 		if (cuadrado2 instanceof Cuadrado) { //HAY QUE CASTEAR SIEMPRE QUE VAYAMOS A UTILIZAR MÉTODOS DE LA CLASE HIJA
 			((Cuadrado) cuadrado2).getLado();
 		}
