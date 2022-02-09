@@ -38,9 +38,9 @@ public class Alimentacion extends Producto {
 		int dos = 2;
 		double divisor = 100.0;
 		if (diasParaCaducar <= dos) {
-			return super.calcularPrecioFinal(impuesto, descuento) - (super.calcularPrecioFinal(impuesto, descuento) * (descuento / divisor));
+			return getPrecioUnitario() - getPrecioUnitario() * (descuento / divisor);
 		}else {
-			return super.calcularPrecioFinal(impuesto, descuento);
+			return getPrecioUnitario();
 		}
 	}
 

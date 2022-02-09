@@ -22,6 +22,10 @@ public class Ropa extends Producto {
 		return super.toString() + "Ropa [talla=" + talla + "]";
 	}
 	
+	public double calcularPrecioFinal (double impuesto, double descuento) {
+		return getPrecioUnitario();
+	}
+	
 	
 	
 

@@ -1,6 +1,6 @@
 package ejercicio04;
 
-public class Producto {
+public abstract class Producto {
 	
 	private double precioUnitario;
 	private String nombre;
@@ -49,8 +49,6 @@ public class Producto {
 		return "Producto [precioUnitario=" + precioUnitario + ", nombre=" + nombre + ", id=" + id + "]";
 	}
 	
-	public double calcularPrecioFinal (double impuesto, double descuento) {
-		return precioUnitario;
-	}
+	public abstract double calcularPrecioFinal (double impuesto, double descuento);
 
 }

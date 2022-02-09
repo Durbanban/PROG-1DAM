@@ -20,7 +20,6 @@ public class Principal {
 		Gestion g = new Gestion (listaStockage);
 		System.out.println("Indique la cantidad el impuesto en su área");		
 		impuesto = Leer.datoDouble();	
-		
 		do {
 			mostrarMenu();
 			opcionMenu = Leer.datoInt();

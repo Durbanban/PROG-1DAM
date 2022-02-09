@@ -28,7 +28,7 @@ public class Electronica extends Producto {
 	
 	
 	public double calcularPrecioFinal (double impuesto, double descuento) {
-		return super.calcularPrecioFinal(impuesto, descuento) + impuesto;
+		return getPrecioUnitario() + impuesto;
 	}
 	
 	
