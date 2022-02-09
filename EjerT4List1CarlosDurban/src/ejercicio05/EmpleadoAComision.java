@@ -24,7 +24,6 @@ public class EmpleadoAComision extends Empleado {
 	
 	
 	public double calcularSueldo (double impuesto) {
-		double divisor = 100;
 		return super.calcularSueldo(impuesto) + incentivo;
 	}
 	
