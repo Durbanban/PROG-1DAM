@@ -1,5 +1,13 @@
 package ejercicio03;
 
+
+/**
+ * 
+ * Clase POJO de Motocicleta, que hereda de Vehiculo
+ * 
+ * @author DURBAN
+ *
+ */
 public class Motocicleta extends Vehiculo {
 	
 	private String numBastidor;
@@ -39,8 +47,16 @@ public class Motocicleta extends Vehiculo {
 		return super.toString() + "Motocicleta [numBastidor=" + numBastidor + ", carenado=" + carenado + "]";
 	}
 	
-	
+	/**
+	 * 
+	 * Método sobreescrito de la clase Vehiculo
+	 * 
+	 * @param impuesto Puede variar según el usuario
+	 * @return Devuelve el precio final de la motocicleta
+	 * 
+	 */
 	public double calcularImpuesto (double impuesto) {
+		// Se crea un porcentaje para el cálculo del precio, ya que es un 60% de la potencia
 		double porcentaje = 60.0, divisor = 100.0;
 		return super.calcularImpuesto(impuesto) + (getPotencia() * porcentaje) / divisor;
 	}

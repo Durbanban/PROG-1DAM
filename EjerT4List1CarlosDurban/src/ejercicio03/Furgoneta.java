@@ -1,5 +1,13 @@
 package ejercicio03;
 
+
+/**
+ * 
+ * Clase POJO de Furgoneta, que hereda de Vehiculo
+ * 
+ * @author DURBAN
+ *
+ */
 public class Furgoneta extends Vehiculo {
 	
 	private String numBastidor;
@@ -52,8 +60,17 @@ public class Furgoneta extends Vehiculo {
 				+ "]";
 	}
 	
+	/**
+	 * 
+	 * Método sobreescrito de la clase Vehiculo
+	 * 
+	 * @param impuesto Puede variar según el usuario
+	 * @return Devuelve el precio final de la furgoneta
+	 * 
+	 */
 	
 	public double calcularImpuesto (double impuesto) {
+		// Al precio de Vehiculo, se le suma un impuesto especial de furgonetas.
 		return super.calcularImpuesto(impuesto) + impuestoFurgo;
 	}
 	

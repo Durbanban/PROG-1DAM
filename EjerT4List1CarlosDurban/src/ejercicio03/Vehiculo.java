@@ -1,5 +1,14 @@
 package ejercicio03;
 
+/**
+ * 
+ * Clase POJO (Plain Old Java Object) de los objetos de tipo Vehiculo.
+ * 
+ * @author DURBAN
+ * @version 1.0
+ *
+ */
+
 public class Vehiculo {
 	
 	private String marca;
@@ -98,8 +107,16 @@ public class Vehiculo {
 				+ "]";
 	}
 
-
+	/**
+	 * 
+	 * Método para calcular el precio final del vehículo, incluyendo el impuesto.
+	 * 
+	 * @param impuesto Debido a que puede variar el impuesto, se le pasa como parámetro
+	 * @return Devuelve la suma del precio base del vehículo y el impuesto elegido.
+	 */
+	
 	public double calcularImpuesto (double impuesto) {
+		// El impuesto se le pregunta al usuario en Principal
 		return precio + impuesto;
 	}
 

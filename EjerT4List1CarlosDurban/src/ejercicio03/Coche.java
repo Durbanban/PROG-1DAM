@@ -1,5 +1,13 @@
 package ejercicio03;
 
+
+/**
+ * 
+ * Clase POJO de Coche, que hereda de Vehiculo
+ * 
+ * @author DURBAN
+ *
+ */
 public class Coche extends Vehiculo {
 	
 	private String numBastidor;
@@ -33,8 +41,17 @@ public class Coche extends Vehiculo {
 		return super.toString() + "Coche [numBastidor=" + numBastidor + ", numPuertas=" + numPuertas + "]";
 	}
 	
+	/**
+	 * 
+	 * Método sobreescrito de la clase Vehiculo
+	 * 
+	 * @param impuesto Puede variar según el usuario
+	 * @return Devuelve el precio final del coche
+	 * 
+	 */
 	
 	public double calcularImpuesto (double impuesto) {
+		// Al precio final de vehiculo, hay que sumarle el 25% de la cilindrada del coche
 		double porcentaje = 25.0, divisor = 100.0;
 		return super.calcularImpuesto(impuesto) + (getCilindrada() * porcentaje) / divisor;
 	}
