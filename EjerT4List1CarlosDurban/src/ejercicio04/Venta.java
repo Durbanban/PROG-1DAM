@@ -38,9 +38,10 @@ public class Venta {
 				+ "**********************************\n\n\tCantidad\t\t\tProducto\t\t\tPrecioUnitario\t\t\tTotal");
 		for (int i = 0; i < lineasTicket.length; i++) {
 			System.out.printf("\n\r"
-					+ "\t%d\t\t\t\t%s\t\t\t%.2f\t\t\t\t%.2f\n\r", lineasTicket [i].getCantidad(), lineasTicket[i].getProducto().getNombre()
+					+ "\t%d\t\t\t\t%s\t\t\t%.2f\t\t\t\t%.2f\t", lineasTicket [i].getCantidad(), lineasTicket[i].getProducto().getNombre()
 					, calcularUnProducto (lineasTicket [i].getProducto(), impuesto, descuento), 
 					calcularUnProducto (lineasTicket [i].getProducto(), impuesto, descuento) * lineasTicket [i].getCantidad());
+			avisarCaducado (lineasTicket [i].getProducto());
 			suma += calcularUnProducto(lineasTicket [i].getProducto(), impuesto, descuento);
 		}
 		System.out.printf("\n********************************************************************************"
@@ -52,6 +53,13 @@ public class Venta {
 		for (int i = 0; i < lineasTicket.length; i++) {
 			System.out.println((i+1) + ". " +lineasTicket [i].getProducto());
 		}
+	}
+	
+	public void avisarCaducado (Producto p) {
+		if (p instanceof ICaducable) {
+			((ICaducable) p).avisarCaducidad();
+		}
+		
 	}
 	
 	

@@ -1,6 +1,6 @@
 package ejercicio04;
 
-public class Alimentacion extends Producto {
+public class Alimentacion extends Producto implements ICaducable{
 	
 	private int diasParaCaducar;
 	
