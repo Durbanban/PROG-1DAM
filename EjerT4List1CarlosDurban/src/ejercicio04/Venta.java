@@ -56,8 +56,8 @@ public class Venta {
 	}
 	
 	public void avisarCaducado (Producto p) {
-		if (p instanceof ICaducable) {
-			((ICaducable) p).avisarCaducidad();
+		if (p instanceof Alimentacion) {
+			((Alimentacion) p).avisarCaducidad();
 		}
 		
 	}
