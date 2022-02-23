@@ -35,6 +35,9 @@ public class Principal {
 		}
 		
 		System.out.println("\n" + listaAlumnos.size());
+		Alumno [] listado;
+		
+		
 		System.out.println("\n" + listaAlumnos.toArray()[0] + "\n");
 		for (int i = 0; i < listaAlumnos.size(); i++) {
 			if (((Alumno)listaAlumnos.toArray()[i]).getEdad() >= 18) {
