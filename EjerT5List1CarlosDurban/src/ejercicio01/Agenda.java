@@ -59,8 +59,23 @@ public class Agenda {
 	}
 	
 	public void mostrarUnaNota (int seleccion) {
-		listaNotas.get(seleccion - 1);
+		if (seleccion <= listaNotas.size() && seleccion > 0) {
+			System.out.println(listaNotas.get(seleccion - 1));
+		}else {
+			System.out.println("No existen notas en su selección");
+		}
 	}
+	
+	public void borrarNota (int seleccion) {
+		if (seleccion <= listaNotas.size() && seleccion > 0) {
+			listaNotas.remove(seleccion - 1);
+			System.out.println("Nota borrada con éxito");
+		}else {
+			System.out.println("No existen notas en su selección");
+		}
+	}
+	
+	
 	
 	
 	

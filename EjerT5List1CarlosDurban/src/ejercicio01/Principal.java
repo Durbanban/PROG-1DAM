@@ -19,40 +19,50 @@ public class Principal {
 		Nota n;
 		Agenda a = new Agenda (idAgenda, lista);
 		
-		mostrarMenu ();
-		opcionMenu = Leer.datoInt();
-		switch (opcionMenu) {
-			case 1:
-				a.mostrarNotas();
-				System.out.println("Indique el número de la nota");
-				seleccionNota = Leer.datoInt();
-				a.mostrarUnaNota(seleccionNota);
-				break;
-			case 2:
-				System.out.println("Hay un total de " + a.mostrarTotalNotas() + " notas almacenadas");
-				break;
-			case 3:
-				System.out.println("Indique la cabecera de la nota");
-				cabecera = Leer.dato();
-				System.out.println("Indique el cuerpo de la nota");
-				cuerpo = Leer.dato();
-				do {
-					System.out.println("¿Es urgente? Pulse 1 si lo es, pulse 2 si no lo es");
-					opcionUrgente = Leer.datoInt();
-				}while (opcionUrgente != 1 && opcionUrgente != 0);
-				urgente = convertirIntABoolean (opcionUrgente);
-				n = new Nota (idNota, cabecera, cuerpo, urgente);
-				a.addNota(n);
-				
-				break;
-			case 4:
-				break;
-			case 0:
-				break;
-			default:
-				System.out.println("Por favor, elija una opción correcta");
-				break;
-		}
+		do {
+			mostrarMenu ();
+			opcionMenu = Leer.datoInt();
+			switch (opcionMenu) {
+				case 1:
+					if (a.mostrarTotalNotas() != 0) {
+						a.mostrarNotas();
+						System.out.println("Indique el número de la nota");
+						seleccionNota = Leer.datoInt();
+						a.mostrarUnaNota(seleccionNota);						
+					}else {
+						System.out.println("Aún no existen notas en la Agenda. Añade alguna");
+					}
+					break;
+				case 2:
+					System.out.println("Hay un total de " + a.mostrarTotalNotas() + " notas almacenadas");
+					break;
+				case 3:
+					System.out.println("Indique la cabecera de la nota");
+					cabecera = Leer.dato();
+					System.out.println("Indique el cuerpo de la nota");
+					cuerpo = Leer.dato();
+					do {
+						System.out.println("¿Es urgente? Pulse 1 si lo es, pulse 0 si no lo es");
+						opcionUrgente = Leer.datoInt();
+					}while (opcionUrgente != 1 && opcionUrgente != 0);
+					urgente = convertirIntABoolean (opcionUrgente);
+					n = new Nota (idNota, cabecera, cuerpo, urgente);
+					a.addNota(n);		
+					idNota ++;
+					break;
+				case 4:
+					a.mostrarNotas();
+					System.out.println("Indique el número de la nota");
+					seleccionNota = Leer.datoInt();
+					a.borrarNota(seleccionNota);					
+					break;
+				case 0:
+					break;
+				default:
+					System.out.println("Por favor, elija una opción correcta");
+					break;
+			}
+		}while (opcionMenu != 0);
 		
 		System.out.println("Gracias por usar el programa");
 		
