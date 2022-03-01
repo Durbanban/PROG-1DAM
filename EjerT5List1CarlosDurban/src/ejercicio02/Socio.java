@@ -88,6 +88,22 @@ public class Socio implements ICuota{
 		}
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		Socio auxiliar;
+		if (obj instanceof Socio) {
+			auxiliar = ((Socio)obj);
+			if (auxiliar.getIdSocio() == idSocio 
+				&& auxiliar.getNombre().equalsIgnoreCase(nombre)) {
+				return true;
+			}else {
+				return false;
+			}
+		}else {
+			return false;
+		}
+	}
+	
 	
 	
 	

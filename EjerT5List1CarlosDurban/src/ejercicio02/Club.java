@@ -42,6 +42,28 @@ public class Club {
 	public String toString() {
 		return "Club [idClub=" + idClub + ", listaSocios=" + listaSocios + ", listaPistas=" + listaPistas + "]";
 	}
+	
+	
+	public void buscarSocio (int id) {
+		for (Socio socio : listaSocios) {
+			if (socio.getIdSocio() == id) {
+				System.out.println(socio);
+			}
+		}
+	}
+	
+	public void agregarSocio (Socio s) {
+		listaSocios.add(s);		
+	}
+	
+	public void mostrarSocios () {
+		for (int i = 0; i < listaSocios.size(); i++) {
+			System.out.println((i + 1) + ". " + listaSocios.get(i));
+		}
+	}
+	
+	
+	
 
 	
 	
