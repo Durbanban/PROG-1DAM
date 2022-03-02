@@ -83,7 +83,7 @@ public class Principal {
 				System.out.printf("La cuota de ese socio es: %.2f €\n", club.getListaSocios().get(aux - 1).calcularCuotaSocio(topeEdad, topeHijos, descEdad, descFamiliaNumerosa));
 				break;
 			case 3:
-				System.out.println("Introduza el nombre del socio");
+				System.out.println("Introduzca el nombre del socio");
 				nombreSeleccion = Leer.dato();
 				System.out.println("Introduzca el número de hijos actual");
 				aux = Leer.datoInt();

@@ -97,7 +97,9 @@ public class Club {
 	}
 	
 	public void borrarUsuario (int seleccion) {
-		listaSocios.get(seleccion - 1);
+		if (seleccion <= listaSocios.size()) {
+			listaSocios.remove(seleccion - 1);
+		}
 	}
 	
 	public void mostrarSociosVIP () {
