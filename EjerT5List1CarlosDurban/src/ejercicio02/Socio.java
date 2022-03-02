@@ -74,12 +74,11 @@ public class Socio implements ICuota{
 				+ ", cuota=" + cuota + "]";
 	}
 	
-	public double calcularCuotaSocio (double descEdad, double descFamNum) {
+	public double calcularCuotaSocio (int topeEdad, int topeHijos, double descEdad, double descFamNum) {
 		double divisor = 100.0;
-		int topeHijos = 3;
-		if (edad >= 65 && numHijos >= topeHijos) {
+		if (edad >= topeEdad && numHijos >= topeHijos) {
 			return cuota - ((cuota * (descEdad / divisor)) + (cuota * (descFamNum / divisor)));
-		}else if (edad >= 65) {
+		}else if (edad >= topeEdad) {
 			return cuota - (cuota * (descEdad / divisor));
 		}else if (numHijos >= topeHijos) {
 			return cuota - (cuota * (descFamNum / divisor));

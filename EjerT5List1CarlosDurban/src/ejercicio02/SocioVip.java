@@ -47,12 +47,12 @@ public class SocioVip extends Socio {
 		return super.toString() + "SocioVip [numPistas=" + pistasAlquiladas + ", extraCuota=" + extraCuota + "]";
 	}
 	
-	public double calcularCuotaSocio (double descEdad, double descFamNum) {
+	public double calcularCuotaSocio (int topeEdad, int topeHijos, double descEdad, double descFamNum) {
 		double resultado = 0.0;
 		for (Pista pista : pistasAlquiladas) {
 			resultado += pista.getPrecio();
 		}
-		return super.calcularCuotaSocio(descEdad, descFamNum) + extraCuota + resultado;
+		return super.calcularCuotaSocio(topeEdad, topeHijos, descEdad, descFamNum) + extraCuota + resultado;
 	}
 	
 	
