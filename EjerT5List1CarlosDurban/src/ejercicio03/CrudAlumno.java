@@ -23,6 +23,15 @@ public class CrudAlumno {
 		return "CrudAlumno [listado=" + listado + "]";
 	}
 	
+	public void mostrarAlumnos () {
+		for (Alumno alumno : listado) {
+			System.out.println(alumno);
+		}
+	}
+	
+	public void agregarAlumno (Alumno a) {
+		listado.add(a);
+	}
 	
 	
 	
