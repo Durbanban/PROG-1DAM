@@ -11,6 +11,8 @@ public class Principal {
 		// TODO Auto-generated method stub
 		int idCole = 0;
 		Set <Alumno> listaAlumnos = new HashSet <Alumno> ();
+		
+		CrudAlumno crudAlumno;
 		System.out.println("Bienvenido a la EscuelApp");
 		
 		System.out.println("Indique el id del colegio");
