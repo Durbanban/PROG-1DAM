@@ -32,6 +32,7 @@ public class CrudAlumno {
 	
 	public void agregarAlumno (Alumno a) {
 		listado.add(a);
+		
 	}
 	
 	public Alumno buscarPorNombre (String nombre) {
@@ -49,6 +50,22 @@ public class CrudAlumno {
 		}
 		return aux;
 		
+	}
+	
+	public void modificarEdadAlumno (String nombre, int edad) {
+		Alumno aux;
+		aux = buscarPorNombre (nombre);
+		if (aux != null) {
+			aux.setEdad(edad);
+		}
+	}
+	
+	public void borrarAlumno (String nombre) {
+		Alumno aux;
+		aux = buscarPorNombre (nombre);
+		if (aux != null) {
+			listado.remove(aux);
+		}
 	}
 	
 	
