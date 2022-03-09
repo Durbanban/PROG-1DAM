@@ -14,6 +14,8 @@ public class Principal {
 		Set <Alumno> listaAlumnos = new HashSet <Alumno> ();
 		
 		Alumno a1 = new Alumno (idAlumno + 1, "Carlos Jesús", "Durbán Viloca", new ArrayList <Nota> (), 30);
+		Alumno a2 = new Alumno (idAlumno + 1, "Álvaro", "Franco Martínez", new ArrayList <Nota> (), 25);
+
 		
 		CrudAlumno crudAlumno;
 		System.out.println("Bienvenido a la EscuelApp");
@@ -23,10 +25,11 @@ public class Principal {
 		
 		Colegio c = new Colegio (idCole, listaAlumnos);
 		crudAlumno = new CrudAlumno (listaAlumnos);
+		crudAlumno.agregarAlumno(a1);
+		crudAlumno.agregarAlumno(a2);
 		
-		crudAlumno.mostrarAlumnos();
 		
-		
+		System.out.println(crudAlumno.buscarPorNombre("Álvaro"));
 		
 		
 	}
