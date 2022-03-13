@@ -3,9 +3,6 @@ package basico;
 
 public class Principal {
 	
-	public static String hacerAlgo (String s) {
-		return "Estoy haciendo algo " + s;
-	}
 	
 	public static void hacerAlgoConLambda () {
 		InterfazFuncional angel = (String s) -> "Hola soy Ángel y he hecho algo " + s;
@@ -16,7 +13,7 @@ public class Principal {
 	}
 	
 	public static void hacerAlgoFuncionHighOrder (InterfazFuncional comportamiento) {
-		String res = comportamiento.hacerAlgo("en el FUT champions");
+		String res = comportamiento.hacerAlgo("funcional.");
 		System.out.println(res);
 	}
 	
@@ -47,7 +44,7 @@ public class Principal {
 		hacerAlgoFuncionHighOrder (adrian::hacerAlgo2);
 		hacerAlgoFuncionHighOrder (rafa::corregirBoletin);
 		hacerAlgoFuncionHighOrder (rafa::corregirExamen);
-		hacerAlgoFuncionHighOrder(bitch -> "Hola soy Antonio" + bitch);
+		hacerAlgoFuncionHighOrder(s -> "Hola soy Antonio y he hecho algo " + s);
 	}
 
 }
