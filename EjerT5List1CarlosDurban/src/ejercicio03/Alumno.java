@@ -1,6 +1,7 @@
 package ejercicio03;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Alumno {
 	
@@ -63,6 +64,25 @@ public class Alumno {
 		return "Alumno [idAlumno=" + idAlumno + ", nombre=" + nombre + ", apellidos=" + apellidos + ", listaNotas="
 				+ listaNotas + ", edad=" + edad + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(apellidos, edad, idAlumno, listaNotas, nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alumno other = (Alumno) obj;
+		return Objects.equals(apellidos, other.apellidos) && edad == other.edad && idAlumno == other.idAlumno
+				&& Objects.equals(listaNotas, other.listaNotas) && Objects.equals(nombre, other.nombre);
+	}
+	
 	
 	
 	

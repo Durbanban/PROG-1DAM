@@ -1,5 +1,7 @@
 package ejercicio04;
 
+import java.util.Objects;
+
 public class Contacto {
 	
 	private int id;
@@ -71,6 +73,26 @@ public class Contacto {
 		return "Contacto [id=" + id + ", nombre=" + nombre + ", sexo=" + sexo + ", edad=" + edad + ", numTelefono="
 				+ numTelefono + ", entorno=" + entorno + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(edad, entorno, id, nombre, numTelefono, sexo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Contacto other = (Contacto) obj;
+		return edad == other.edad && Objects.equals(entorno, other.entorno) && id == other.id
+				&& Objects.equals(nombre, other.nombre) && Objects.equals(numTelefono, other.numTelefono)
+				&& Objects.equals(sexo, other.sexo);
+	}
+	
 	
 	
 	
