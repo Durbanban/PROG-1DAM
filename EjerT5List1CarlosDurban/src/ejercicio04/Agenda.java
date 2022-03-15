@@ -52,23 +52,7 @@ public class Agenda {
 			System.out.println("Clave: " + aux + " -> " + agenda.get(aux));
 		}
 	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(agenda);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Agenda other = (Agenda) obj;
-		return Objects.equals(agenda, other.agenda);
-	}
+	
 	
 	
 	
