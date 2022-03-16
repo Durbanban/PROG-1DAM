@@ -39,19 +39,19 @@ public class Principal {
 					crudPersona.mostrarLista();
 					break;
 				case 2:
-					Collections.sort(lista);
+					crudPersona.ordenarNatural();
 					crudPersona.mostrarLista();
 					break;
 				case 3:
-					Collections.sort(lista, cpnv);
+					crudPersona.ordenarPorNombreInverso(cpnv);
 					crudPersona.mostrarLista();
 					break;
 				case 4:
-					Collections.sort(lista, cpa);
+					crudPersona.ordenarPorAltura (cpa);
 					crudPersona.mostrarLista();
 					break;
 				case 5:
-					Collections.sort(lista, cpp);
+					crudPersona.ordenarPorPeso (cpp);
 					crudPersona.mostrarLista();
 					break;
 				case 0:

@@ -1,5 +1,6 @@
 package ejercicio05;
 
+import java.util.Collections;
 import java.util.List;
 
 public class CrudPersona {
@@ -33,6 +34,22 @@ public class CrudPersona {
 			System.out.println(persona);
 		}
 		System.out.println();
+	}
+	
+	public void ordenarNatural () {
+		Collections.sort(listaP);
+	}
+	
+	public void ordenarPorNombreInverso (ComparaPorNombreInverso cpni) {
+		Collections.sort(listaP, cpni);
+	}
+	
+	public void ordenarPorAltura (ComparaPorAltura cpa) {
+		Collections.sort(listaP, cpa);
+	}
+	
+	public void ordenarPorPeso (ComparaPorPeso cpp) {
+		Collections.sort(listaP, cpp);
 	}
 	
 

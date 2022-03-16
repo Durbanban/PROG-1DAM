@@ -12,10 +12,6 @@ public class Principal {
 		System.out.println(angel.hacerAlgo("regular"));
 	}
 	
-	public static void hacerAlgoFuncionHighOrder (InterfazFuncional comportamiento) {
-		String res = comportamiento.hacerAlgo("funcional.");
-		System.out.println(res);
-	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -25,26 +21,19 @@ public class Principal {
 		Rafa rafa = new Rafa ();
 		String aux;
 		String fraseAngel = "regular";
+		HighOrder ho = new HighOrder ();
 		System.out.println(durban.hacerAlgo("malo"));
-		InterfazFuncional alvaro = new InterfazFuncional () {
-
-			@Override
-			public String hacerAlgo(String s) {
-				// TODO Auto-generated method stub
-				return "Hola soy Álvaro y he hecho algo " + s;
-			}
-			
-		};
 		
-		System.out.println(alvaro.hacerAlgo("bueno"));
 		hacerAlgoConLambda ();
-		hacerAlgoFuncionHighOrder (alvaro);
-		hacerAlgoFuncionHighOrder (durban);
-		hacerAlgoFuncionHighOrder (nombre -> "Hola soy Xopin y he hecho algo " + nombre);
-		hacerAlgoFuncionHighOrder (adrian::hacerAlgo2);
-		hacerAlgoFuncionHighOrder (rafa::corregirBoletin);
-		hacerAlgoFuncionHighOrder (rafa::corregirExamen);
-		hacerAlgoFuncionHighOrder(s -> "Hola soy Antonio y he hecho algo " + s);
+		ho.hacerAlgoFuncionHighOrder (durban);
+		ho.hacerAlgoFuncionHighOrder (nombre -> "Hola soy Xopin y he hecho algo " + nombre);
+		ho.hacerAlgoFuncionHighOrder (adrian::hacerAlgo);
+		ho.hacerAlgoFuncionHighOrder(adrian::hacerAlgo2);
+		ho.hacerAlgoFuncionHighOrder (rafa::corregirBoletin);
+		ho.hacerAlgoFuncionHighOrder (rafa::corregirExamen);
+		ho.hacerAlgoFuncionHighOrder(s -> "Hola soy Antonio y he hecho algo " + s);
+		InterfazFuncional pedro = (s -> "Hola soy Pedro y he hecho algo " + s);
+		ho.hacerAlgoFuncionHighOrder(pedro);
 	}
 
 }

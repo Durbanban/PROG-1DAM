@@ -8,7 +8,7 @@ public class Adrian implements InterfazFuncional {
 	}
 	
 	public String hacerAlgo2 (String s) {
-		return "Hola soy Tu Puta Madre y hago algo " + s;
+		return "Hola soy Adri y hago algo " + s;
 	}
 	
 	
