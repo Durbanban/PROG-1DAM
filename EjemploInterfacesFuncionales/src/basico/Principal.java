@@ -33,6 +33,7 @@ public class Principal {
 		ho.hacerAlgoFuncionHighOrder(rafa::corregirExamen);
 		ho.hacerAlgoFuncionHighOrder(s -> "Hola soy Antonio y he hecho algo " + s);
 		InterfazFuncional pedro = (s -> "Hola soy Pedro y he hecho algo " + s);
+		System.out.println(pedro);
 		ho.hacerAlgoFuncionHighOrder(pedro);
 	}
 

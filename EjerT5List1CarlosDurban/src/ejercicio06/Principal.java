@@ -46,7 +46,31 @@ public class Principal {
 					crudTrabajador.mostrarLista();
 					break;
 				case 3:
-					Collections.sort(crudTrabajador.getListado(), cph);
+					crudTrabajador.getListado().sort((o1, o2) -> {
+						int res = 0;
+						if (t1.getHorasTrabajadas() > t2.getHorasTrabajadas()) {
+							res = -1;
+						}else {
+							if (t1.getHorasTrabajadas() < t2.getHorasTrabajadas()) {
+								res = 1;
+							}
+						}
+						return res;
+					});
+					
+					crudTrabajador.getListado().sort(o1, o2 -> {
+						int res = 0;
+						if (t1.getHorasTrabajadas() > t2.getHorasTrabajadas()) {
+							res = -1;
+						}else if (t1.getHorasTrabajadas() < t2.getHorasTrabajadas()) {
+							res = 1;
+						}else {
+							res = 0;
+						}
+						return res;
+					});
+					//crudTrabajador.getListado().sort(cph);
+					//Collections.sort(crudTrabajador.getListado(), cph);
 					crudTrabajador.mostrarLista();
 					break;
 				case 4:
