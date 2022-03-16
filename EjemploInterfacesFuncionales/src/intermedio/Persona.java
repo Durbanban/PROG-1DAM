@@ -1,18 +1,20 @@
 package intermedio;
 
-public class Persona {
+public class Persona implements Comparable <Persona> {
 	
 	private int idPersona;
 	private String nombre;
+	private String telefono;
 	private int edad;
 	private int altura;
 	private double peso;
 	private String domicilio;
 	
 	
-	public Persona(int idPersona, String nombre, int edad, int altura, double peso, String domicilio) {
+	public Persona(int idPersona, String nombre, String telefono, int edad, int altura, double peso, String domicilio) {
 		this.idPersona = idPersona;
 		this.nombre = nombre;
+		this.telefono = telefono;
 		this.edad = edad;
 		this.altura = altura;
 		this.peso = peso;
@@ -33,6 +35,14 @@ public class Persona {
 	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	public String getTelefono () {
+		return telefono;
+	}
+	
+	public void setTelefono (String telefono) {
+		this.telefono = telefono;
 	}
 	
 	public int getEdad() {
@@ -74,6 +84,15 @@ public class Persona {
 		return "Persona [idPersona=" + idPersona + ", nombre=" + nombre + ", edad=" + edad + ", altura=" + altura
 				+ ", peso=" + peso + ", domicilio=" + domicilio + "]";
 	}
+
+	@Override
+	public int compareTo(Persona p) {
+		return -(p.getNombre().compareTo(nombre));
+	}
+	
+	
+	
+	
 	
 	
 
