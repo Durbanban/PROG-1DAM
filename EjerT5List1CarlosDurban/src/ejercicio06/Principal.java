@@ -122,10 +122,9 @@ public class Principal {
 //						}
 //					});
 					
-					Consumer <Trabajador> cons = o1 -> {
-						System.out.printf("%s tiene como dni: %s, trabaja %d horas y gana %.2f €, ya que la hora la cobra a %.2f €", o1.getNombre(), o1.getDni(), o1.getHorasTrabajadas()
+					Consumer <Trabajador> cons = o1 -> System.out.printf("%s tiene como dni: %s, trabaja %d horas y gana %.2f €, ya que la hora la cobra a %.2f €", o1.getNombre(), o1.getDni(), o1.getHorasTrabajadas()
 								, o1.calcularSueldo(), o1.getSueldoPorHora());
-					};
+					cons.accept(crudTrabajador.buscarPorNombre("doctor strange"));
 					
 					
 					crudTrabajador.mostrarLista();

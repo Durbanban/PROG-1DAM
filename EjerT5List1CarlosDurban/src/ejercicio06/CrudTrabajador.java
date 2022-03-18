@@ -1,5 +1,6 @@
 package ejercicio06;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class CrudTrabajador {
@@ -27,11 +28,28 @@ public class CrudTrabajador {
 		listado.add(t);
 	}
 	
-	public void mostrarLista () {
+	public void mostrarLista() {
 		for (Trabajador trabajador : listado) {
 			System.out.println(trabajador);
 		}
 		System.out.println();
+	}
+	
+	public Trabajador buscarPorNombre(String nombre) {
+		Trabajador aux = null;
+		boolean salir = false;
+		Iterator <Trabajador> it = listado.iterator();
+		while (it.hasNext() && !salir) {
+			aux = it.next();
+			if (aux.getNombre().equalsIgnoreCase(nombre)) {
+				salir = true;
+			}
+		}
+		if (!salir) {
+			aux = null;
+		}
+		return aux;
+		
 	}
 	
 	

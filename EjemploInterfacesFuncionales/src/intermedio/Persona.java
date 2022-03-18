@@ -1,19 +1,23 @@
 package intermedio;
 
+import java.util.function.BiFunction;
+
 public class Persona implements Comparable <Persona> {
 	
 	private int idPersona;
 	private String nombre;
+	private String apellido;
 	private String telefono;
 	private int edad;
-	private int altura;
+	private double altura;
 	private double peso;
 	private String domicilio;
 	
 	
-	public Persona(int idPersona, String nombre, String telefono, int edad, int altura, double peso, String domicilio) {
+	public Persona(int idPersona, String nombre, String apellido, String telefono, int edad, double altura, double peso, String domicilio) {
 		this.idPersona = idPersona;
 		this.nombre = nombre;
+		this.apellido = apellido;
 		this.telefono = telefono;
 		this.edad = edad;
 		this.altura = altura;
@@ -37,11 +41,19 @@ public class Persona implements Comparable <Persona> {
 		this.nombre = nombre;
 	}
 	
-	public String getTelefono () {
+	public String getApellido() {
+		return apellido;
+	}
+	
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	
+	public String getTelefono() {
 		return telefono;
 	}
 	
-	public void setTelefono (String telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 	
@@ -53,11 +65,11 @@ public class Persona implements Comparable <Persona> {
 		this.edad = edad;
 	}
 	
-	public int getAltura() {
+	public double getAltura() {
 		return altura;
 	}
 	
-	public void setAltura(int altura) {
+	public void setAltura(double altura) {
 		this.altura = altura;
 	}
 	
@@ -78,16 +90,25 @@ public class Persona implements Comparable <Persona> {
 	}
 	
 	
-	
+
 	@Override
 	public String toString() {
-		return "Persona [idPersona=" + idPersona + ", nombre=" + nombre + ", edad=" + edad + ", altura=" + altura
-				+ ", peso=" + peso + ", domicilio=" + domicilio + "]";
+		return "Persona [idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono="
+				+ telefono + ", edad=" + edad + ", altura=" + altura + ", peso=" + peso + ", domicilio=" + domicilio
+				+ "]";
 	}
 
 	@Override
 	public int compareTo(Persona p) {
-		return -(p.getNombre().compareTo(nombre));
+		return -(p.getApellido().compareTo(apellido));
+	}
+	
+	public double calcularIMC () {
+		double divisor = 100.0, alturaEnMetros = 0.0, dos = 2.0;
+		alturaEnMetros = (altura / divisor);
+		return (peso / Math.pow(alturaEnMetros, dos));
+		
+		
 	}
 	
 	

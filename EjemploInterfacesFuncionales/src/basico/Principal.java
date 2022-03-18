@@ -36,5 +36,7 @@ public class Principal {
 		System.out.println(pedro);
 		ho.hacerAlgoFuncionHighOrder(pedro);
 	}
+	
+	
 
 }
