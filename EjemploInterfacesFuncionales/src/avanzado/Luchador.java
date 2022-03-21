@@ -115,10 +115,11 @@ public class Luchador implements Comparable <Luchador>{
 
 	@Override
 	public int compareTo(Luchador l) {
-		return (l.getIdLuchador().compareTo(idLuchador));
+		return (l.getNombre().compareTo(nombre));
 		
 	}
-	
+
+
 	
 	
 	
