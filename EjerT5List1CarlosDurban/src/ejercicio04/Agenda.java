@@ -1,10 +1,14 @@
 package ejercicio04;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
+import java.util.Set;
 
 
 public class Agenda {
@@ -28,20 +32,17 @@ public class Agenda {
 		return "Agenda [agenda=" + agenda + "]";
 	}
 	
-	public Contacto buscarContactoPorNombre (String nombre) {
-		Contacto aux = null;
-		boolean salir = false;
+	public Map <Contacto, String> buscarContactoPorNombre (String nombre) {
+		Contacto aux;
+		Map <Contacto, String> mapaAux = new HashMap <Contacto, String> ();
 		Iterator <Contacto> it = agenda.keySet().iterator();
-		while (it.hasNext() && !salir) {
+		while (it.hasNext()) {
 			aux = it.next();
 			if (aux.getNombre().equalsIgnoreCase(nombre)) {
-				salir = true;
+				mapaAux.put(aux, aux.getNumTelefono());
 			}
 		}
-		if (!salir) {
-			aux = null;
-		}
-		return aux;
+		return mapaAux;
 	}
 	
 	public void mostrarAgenda () {

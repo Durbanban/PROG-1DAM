@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class Luchador implements Comparable <Luchador>{
 	
-	private String idLuchador;
 	private String nombre;
 	private double puntosHP;
 	private double puntosATK;
@@ -12,9 +11,8 @@ public class Luchador implements Comparable <Luchador>{
 	private double damage;
 	
 	
-	public Luchador(String idLuchador, String nombre, double puntosHP, double puntosATK, double puntosDEF,
+	public Luchador(String nombre, double puntosHP, double puntosATK, double puntosDEF,
 			double damage) {
-		this.idLuchador = idLuchador;
 		this.nombre = nombre;
 		this.puntosHP = puntosHP;
 		this.puntosATK = puntosATK;
@@ -22,15 +20,6 @@ public class Luchador implements Comparable <Luchador>{
 		this.damage = damage;
 	}
 
-
-	public String getIdLuchador() {
-		return idLuchador;
-	}
-
-
-	public void setIdLuchador(String idLuchador) {
-		this.idLuchador = idLuchador;
-	}
 
 
 	public String getNombre() {
@@ -83,17 +72,20 @@ public class Luchador implements Comparable <Luchador>{
 	}
 
 
+
 	@Override
 	public String toString() {
-		return "Luchador [idLuchador=" + idLuchador + ", nombre=" + nombre + ", puntosHP=" + puntosHP + ", puntosATK="
-				+ puntosATK + ", puntosDEF=" + puntosDEF + ", damage=" + damage + "]";
+		return "Luchador [nombre=" + nombre + ", puntosHP=" + puntosHP + ", puntosATK=" + puntosATK + ", puntosDEF="
+				+ puntosDEF + ", damage=" + damage + "]";
 	}
+
 
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(damage, idLuchador, nombre, puntosATK, puntosDEF, puntosHP);
+		return Objects.hash(damage, nombre, puntosATK, puntosDEF, puntosHP);
 	}
+
 
 
 	@Override
@@ -106,16 +98,17 @@ public class Luchador implements Comparable <Luchador>{
 			return false;
 		Luchador other = (Luchador) obj;
 		return Double.doubleToLongBits(damage) == Double.doubleToLongBits(other.damage)
-				&& Objects.equals(idLuchador, other.idLuchador) && Objects.equals(nombre, other.nombre)
+				&& Objects.equals(nombre, other.nombre)
 				&& Double.doubleToLongBits(puntosATK) == Double.doubleToLongBits(other.puntosATK)
 				&& Double.doubleToLongBits(puntosDEF) == Double.doubleToLongBits(other.puntosDEF)
 				&& Double.doubleToLongBits(puntosHP) == Double.doubleToLongBits(other.puntosHP);
 	}
 
 
+
 	@Override
 	public int compareTo(Luchador l) {
-		return (l.getNombre().compareTo(nombre));
+		return -(l.getNombre().compareTo(nombre));
 		
 	}
 

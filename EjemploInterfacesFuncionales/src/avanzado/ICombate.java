@@ -5,6 +5,6 @@ package avanzado;
 public interface ICombate {
 	
 	
-	public abstract int luchar (Luchador l1, Luchador l2);
+	public abstract Luchador luchar (Luchador l1, Luchador l2);
 
 }
