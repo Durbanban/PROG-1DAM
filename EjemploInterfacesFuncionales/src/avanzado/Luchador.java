@@ -2,7 +2,7 @@ package avanzado;
 
 import java.util.Objects;
 
-public class Luchador implements Comparable <Luchador>{
+public class Luchador implements Comparable <Luchador> {
 	
 	private String nombre;
 	private double puntosVelocidad;
