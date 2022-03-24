@@ -16,7 +16,8 @@ public class Principal {
 
 	public static void main(String[] args) {
 		/*
-		 * Se quiere generar un torneo de Luchadores con diferentes atributos, y ordenarlos en base a estos. También se 
+		 * Se quiere generar un torneo de Luchadores con diferentes atributos, y ordenarlos en base a estos. También se quiere
+		 * crear un combate que vaya eliminando a los perdedores hasta que sólo quede un luchador.
 		 */
 		int opcionMenu = 0, min = 30, max = 120, tope = 0, index = 0;
 		Random num = new Random (System.nanoTime());
@@ -29,6 +30,7 @@ public class Principal {
 		 */
 		Supplier <Double> crearRandom = () -> min + (max - min) * num.nextDouble();
 		Supplier <Luchador> generadorLuchadores = () -> new Luchador("", crearRandom.get(), crearRandom.get(), crearRandom.get(), crearRandom.get(), crearRandom.get());
+		//Supplier <Luchador> generadorLuchadores = Luchador::new;
 		/*
 		 * 
 		 */
