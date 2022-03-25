@@ -21,6 +21,10 @@ public class Luchador implements Comparable <Luchador> {
 		this.puntosDEF = puntosDEF;
 		this.damage = damage;
 	}
+	
+	public Luchador () {
+		
+	}
 
 
 

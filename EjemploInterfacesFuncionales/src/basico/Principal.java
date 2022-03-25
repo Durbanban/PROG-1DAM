@@ -35,6 +35,7 @@ public class Principal {
 		InterfazFuncional pedro = (s -> "Hola soy Pedro y he hecho algo " + s);
 		System.out.println(pedro);
 		ho.hacerAlgoFuncionHighOrder(pedro);
+		
 	}
 	
 	

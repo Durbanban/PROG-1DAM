@@ -17,20 +17,35 @@ public class Principal {
 	public static void main(String[] args) {
 		/*
 		 * Se quiere generar un torneo de Luchadores con diferentes atributos, y ordenarlos en base a estos. También se quiere
-		 * crear un combate que vaya eliminando a los perdedores hasta que sólo quede un luchador.
+		 * crear varios tipos de combate y que se vayan eliminando a los perdedores hasta que sólo quede un luchador.
 		 */
+		
 		int opcionMenu = 0, min = 30, max = 120, tope = 0, index = 0;
 		Random num = new Random (System.nanoTime());
 		Luchador ganador;
 		String fighter1, fighter2, nombre = "Luchador";
 		ComparaPorPuntosHP cpphp = new ComparaPorPuntosHP();
+		/*
+		 * ¿Qué es una interfaz funcional?
+		 * No es más que una interfaz con un único método abstracto, y será la expresión lambda la que implementará dicho método en el programa,
+		 * siempre cumpliendo que use la misma firma (parámetros de entrada y de salida) del método de la interfaz (como ya hemos visto con las 
+		 * interfaces convencionales en clase. Eclipse se apoya en la anotación @FunctionalInterface, para avisarte de que estás cumpliendo los 
+		 * requisitos para que una interfaz sea funcional. Adicionalmente puede tener más métodos default, pero no son abstractos.
+		 */
+		/*
+		 * Creamos la lista de luchadores que vamos a usar en el programa.
+		 */
 		List <Luchador> lista = new ArrayList <Luchador>();
 		/*
+		 * La interfaz funcional Supplier es un tipo de interfaz que no recibe ningún tipo de argumentos, y produce un resultado del tipo que se le indique
+		 * entre '<>'. Esto es ideal para generar datos de forma diferente cada vez, o por ejemplo crear instancias de objetos, ya que el concepto de constructor
+		 * por defecto es similar. Adicionalmente tenemos BooleanSupplier (devuelve un booleano), DoubleSupplier (devuelve un double), IntSupplier (devuelve 
+		 * un int), 
 		 * 
 		 */
 		Supplier <Double> crearRandom = () -> min + (max - min) * num.nextDouble();
 		Supplier <Luchador> generadorLuchadores = () -> new Luchador("", crearRandom.get(), crearRandom.get(), crearRandom.get(), crearRandom.get(), crearRandom.get());
-		//Supplier <Luchador> generadorLuchadores = Luchador::new;
+		
 		/*
 		 * 
 		 */
@@ -74,7 +89,7 @@ public class Principal {
 				System.out.println("Lo sentimos, no existe ese luchador");
 			}
 		};
-		BiConsumer <String, Integer> consum = (s1, n1) -> lista.get(n1).setNombre(s1);
+		BiConsumer <String, Integer> nombrarLuchador = (s1, n1) -> lista.get(n1).setNombre(s1);
 		/*
 		 * 
 		 */
@@ -94,7 +109,7 @@ public class Principal {
 		};
 		 
 			
-		System.out.println("Bienvenido a Mortal Kombat");
+		System.out.println("Bienvenido a Mortal KombApp");
 		System.out.println("¿Cuántos luchadores quiere?");
 		tope = Leer.datoInt();
 		/*
@@ -104,7 +119,7 @@ public class Principal {
 			System.out.println("Indique el nombre del jugador");
 			nombre = Leer.dato();
 			lista.add(generadorLuchadores.get());
-			consum.accept(nombre, index);
+			nombrarLuchador.accept(nombre, index);
 			index++;
 		}
 		do {
