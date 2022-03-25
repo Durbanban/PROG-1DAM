@@ -44,8 +44,8 @@ public class Principal {
 		 * 
 		 */
 		Supplier <Double> crearRandom = () -> min + (max - min) * num.nextDouble();
-		Supplier <Luchador> generadorLuchadores = () -> new Luchador("", crearRandom.get(), crearRandom.get(), crearRandom.get(), crearRandom.get(), crearRandom.get());
-		
+//		Supplier <Luchador> generadorLuchadores = () -> new Luchador("", crearRandom.get(), crearRandom.get(), crearRandom.get(), crearRandom.get(), crearRandom.get());
+		Supplier <Luchador> generadorLuchadores = Luchador::new;
 		/*
 		 * 
 		 */
