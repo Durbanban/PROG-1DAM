@@ -141,6 +141,7 @@ public class Luchador implements Comparable <Luchador> {
 	}
 
 
+
 	
 	
 	
