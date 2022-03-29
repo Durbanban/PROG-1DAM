@@ -136,7 +136,7 @@ public class Luchador implements Comparable <Luchador> {
 
 	@Override
 	public int compareTo(Luchador l) {
-		return -(l.getNombre().compareTo(nombre));
+		return nombre.compareTo(l.getNombre());
 		
 	}
 

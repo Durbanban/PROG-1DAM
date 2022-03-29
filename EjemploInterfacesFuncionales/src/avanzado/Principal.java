@@ -46,7 +46,11 @@ public class Principal {
 		 * Supplier <Tipo> nombre = () -> resultado del tipo; La expresión lambda debe ir sin parámetros de carga con los paréntesis.
 		 * 
 		 */
-		
+		/*() -> System.out.print("Hola");
+		(a, min) -> max + min;
+		public double sumar (double max, double min) {
+			return max + min;
+		}*/
 		Supplier <Double> crearRandom = () -> min + (max - min) * num.nextDouble();
 		Supplier <Luchador> generadorLuchadores = () -> new Luchador("", crearRandom.get(), crearRandom.get()
 				, crearRandom.get(), crearRandom.get(), crearRandom.get());
