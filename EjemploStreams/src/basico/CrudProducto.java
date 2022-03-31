@@ -1,7 +1,9 @@
 package basico;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CrudProducto {
 	
@@ -43,6 +45,27 @@ public class CrudProducto {
 	
 	public void agregarProducto (Producto p) {
 		listado.add(p);
+	}
+	
+	public Producto buscarUnProducto (String nombre) {
+		return listado.stream()
+				.filter(cliente -> cliente.getNombre().equalsIgnoreCase(nombre))
+				.findAny()
+				.orElse(null);
+	}
+	
+	public void cambiarPrecio (String nombre, double precio) {
+		return buscarUnProducto(nombre)
+	}
+	
+	public List <Producto> aplicarDescuentoProductosMayoresQuePrecio (double precio, double descuento) {
+		List <Producto> listaObjetivo = listado;
+		double div = 100;
+		return listaObjetivo.stream()
+				.filter(producto -> producto.getPrecio() > precio)
+				.map(producto -> producto.getPrecio())
+				.map(precio -> precio * (descuento / div))
+				.collect(Collectors.toList());
 	}
 	
 	
