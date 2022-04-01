@@ -54,9 +54,6 @@ public class CrudProducto {
 				.orElse(null);
 	}
 	
-	public void cambiarPrecio (String nombre, double precio) {
-		return buscarUnProducto(nombre)
-	}
 	
 	public List <Producto> aplicarDescuentoProductosMayoresQuePrecio (double precio, double descuento) {
 		List <Producto> listaObjetivo = listado;
