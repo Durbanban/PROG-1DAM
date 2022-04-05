@@ -1,7 +1,9 @@
 package ejercicio03;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -65,21 +67,26 @@ public class Playlist {
 		return "Playlist [listadoCanciones=" + listadoCanciones + ", listadoArtistas=" + listadoArtistas + "]";
 	}
 	
-	public void agregarCancion (Supplier <Cancion> supCancion, Supplier <Artista> supArtista, String nombre, String genero, List <Artista> artistas) {
+	public void agregarCancion (Supplier <Cancion> supCancion, String nombre, String genero, List <Artista> artistas, String nombreArtista, int idCancion) {
 		Cancion c = supCancion.get();
+		c.setIdCancion(idCancion);
 		c.setNombre(nombre);
-		c.setInterpretes(artistas);
 		listadoCanciones.add(c);
-		Artista a = supArtista.get();
 		
-		
-		listadoArtistas.addAll(c.getInterpretes());
 	}
 	
-	public void mostrarListacCanciones() {
+	
+	public void mostrarListaCanciones() {
 		listadoCanciones.stream()
 						.forEach(cancion -> System.out.println(cancion));
 		
+	}
+	
+	public void mostrarListaArtistas() {
+		Iterator<Artista> it = listadoArtistas.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
+		}
 	}
 	
 	public void mostrarListaNombre(String nombre) {
@@ -88,7 +95,7 @@ public class Playlist {
 						.forEach(cancion -> System.out.println(cancion));
 	}
 	
-	public Cancion mostrarListaMayorDuracion () {
+	public Cancion seleccionarCancionMayorDuracion () {
 		return listadoCanciones.stream()
 						.max(Comparator.comparing(Cancion::getDuracion))
 						.get();

@@ -15,7 +15,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int idCancion = 1, opcionMenu = 0, idArtista = 1, numeroArtistas= 0, contador = 0;
+		int idCancion = 1, idArtista = 1, opcionMenu = 0, numeroArtistas= 0, contador = 0;
 		Random num = new Random (System.nanoTime());
 		String nombreCancion, genero, nombreArtista;
 		List <Cancion> listaCanc = new ArrayList();
@@ -39,9 +39,8 @@ public class Principal {
 			return LocalDate.ofEpochDay(((long)aleatorio));
 		};
 		
-		Supplier <Cancion> crearCancion = () -> new Cancion (idCancion, "", null, "", crearFechaSalida.get(), crearDuracion.get());
+		Supplier <Cancion> crearCancion = () -> new Cancion (0, "", new ArrayList<Artista>(), "", crearFechaSalida.get(), crearDuracion.get());
 		
-		Supplier <Artista> crearArtista = () -> new Artista (idArtista, "", null);
 		
 		Playlist pl = new Playlist (listaCanc, listaArt);
 		LocalDate fechaRandom = crearFechaSalida.get();
@@ -62,19 +61,25 @@ public class Principal {
 					nombreCancion = Leer.dato();
 					System.out.println("Indique su género: ");
 					genero = Leer.dato();
-					System.out.println("Indique el número de artistas que han hecho al canción");
+					System.out.println("Indique el número de artistas que han hecho la canción");
 					numeroArtistas = Leer.datoInt();
 					do {
 						System.out.println("Indique el nombre del artista: ");
 						nombreArtista = Leer.dato();
-						new Artista(idArtista, nombreArtista, new ArrayList <Cancion>());
-					
+						artistaCancion.add(new Artista(idArtista, nombreArtista, new ArrayList <Cancion>()));
+						idArtista++;
+						
+						contador++;
 					}while (contador < numeroArtistas);
 					
-					
-					pl.agregarCancion(crearCancion, nombreCancion, genero, new ArrayList <Artista>());
+					pl.agregarCancion(crearCancion, nombreCancion, genero, artistaCancion, nombreArtista, idCancion);
+					idCancion++;
 					break;
 				case 2:
+					pl.mostrarListaCanciones();
+					break;
+				case 3:
+					pl.mostrarListaArtistas();
 					break;
 				case 0:
 					break;
@@ -91,6 +96,7 @@ public class Principal {
 	public static void mostrarMenuPrincipal() {
 		System.out.println("Pulse 1 para añadir canción a la lista");
 		System.out.println("Pulse 2 para mostrar todas las canciones");
+		System.out.println("Pulse 3 para mostrar todos los artistas");
 		System.out.println("Pulse 0 para salir");
 	}
 
