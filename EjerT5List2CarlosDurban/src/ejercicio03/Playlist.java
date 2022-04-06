@@ -72,6 +72,9 @@ public class Playlist {
 		c.setIdCancion(idCancion);
 		c.setNombre(nombre);
 		listadoCanciones.add(c);
+		c.setInterpretes(artistas);
+		listadoArtistas.addAll(artistas);
+		
 		
 	}
 	
