@@ -58,11 +58,10 @@ public class CrudProducto {
 	public List <Producto> aplicarDescuentoProductosMayoresQuePrecio (double precio, double descuento) {
 		List <Producto> listaObjetivo = listado;
 		double div = 100;
-		return listaObjetivo.stream()
-				.filter(producto -> producto.getPrecio() > precio)
-				.map(producto -> producto.getPrecio())
-				.map(precio -> precio * (descuento / div))
-				.collect(Collectors.toList());
+		listaObjetivo.stream()
+							.filter(producto -> producto.getPrecio() >= precio)
+							.forEach(producto -> producto.setPrecio(producto.getPrecio() - (producto.getPrecio() * (descuento / div))));
+		return listaObjetivo;
 	}
 	
 	
