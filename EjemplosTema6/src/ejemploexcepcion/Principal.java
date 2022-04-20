@@ -8,11 +8,18 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		String aux;
-		int numerador = 0, denominador = 0, resultado = 0;
+		int numerador = 0, denominador = 0, resultado = 0, num = 0;
 		Scanner scanner = new Scanner( System.in ); // scanner for input
 		boolean continueLoop = true; // determines if more input is needed
 		do {
 			try /* read two numbers and calculate quotient*/ {
+				
+				// Excepción creada
+				System.out.print( "Please enter an integer numerator: " );
+				//int numerator = scanner.nextInt();
+				aux = scanner.nextLine();
+				num = Integer.parseInt(aux);
+				comprobarEdad(num);
 				System.out.print( "Please enter an integer numerator: " );
 				//int numerator = scanner.nextInt();
 				aux = scanner.nextLine();
@@ -42,6 +49,10 @@ public class Principal {
 				System.err.printf("\nException: %s\n", numberFormatException);
 				System.out.println("Por favor, introduce números enteros");
 			}
+			catch(EdadNegativaExc edadNegativa) {
+				System.err.printf("\nException: %s\n", edadNegativa.getMessage());
+				System.out.println("Por favor, introduce una edad válida");
+			}
 		} while ( continueLoop ); // end do...while
 		}// end main
 	
@@ -49,6 +60,12 @@ public class Principal {
 		public static int dividir( int numerator, int denominator )throws ArithmeticException {
 		return numerator / denominator; // possible division by zero
 		} // end method quotient
+		
+		public static void comprobarEdad(int edad) throws EdadNegativaExc {
+			if(edad < 0) {
+				throw new EdadNegativaExc("No puede haber edad negativa, de momento");
+			}
+		}
 
 
 	};
