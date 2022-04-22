@@ -47,8 +47,10 @@ public class CrudEcuacion2G {
 	
 	public int resolverEcuacion(Ecuacion2G e) throws ArithmeticException, EcuacionDegeneradaExc {
 		int resultado = 0;
-		double discriminante = 
-		resultado = -e.getB()
+		double dos = 2;
+		double discriminante = Math.pow(e.getB(), dos);
+		
+		
 	}
 	
 	
